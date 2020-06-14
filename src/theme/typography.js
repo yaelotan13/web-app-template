@@ -1,13 +1,13 @@
 export default {
   h1: {
-    fontWeight: 800,
+    fontWeight: 700,
     fontSize: '38px',
     letterSpacing: '-0.24px',
     lineHeight: '40px',
-    fontFamily: "'Roboto', 'sans-serif'",
+    fontFamily: "'Muli', 'sans-serif'",
   },
   h2: {
-    fontWeight: 700,
+    fontWeight: 600,
     fontSize: '30px',
     letterSpacing: '-0.24px',
     lineHeight: '32px',
