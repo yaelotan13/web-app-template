@@ -1,5 +1,5 @@
 import React from 'react';
-import { Hidden, Toolbar, Button, AppBar, Slide, useScrollTrigger, Box } from '@material-ui/core';
+import { Hidden, Toolbar, Button, AppBar, Box } from '@material-ui/core';
 import { Link } from 'react-scroll';
 import { makeStyles } from '@material-ui/styles';
 
@@ -23,17 +23,6 @@ const useStyle = makeStyles((theme) => ({
     },
 }));
 
-function HideOnScroll(props) {
-    const { children } = props;
-    const trigger = useScrollTrigger();
-  
-    return (
-      <Slide appear={false} direction="down" in={!trigger}>
-        {children}
-      </Slide>
-    );
-  }
-
 const DesktopNavigation = (props) => {
     const classes = useStyle();
     const { screens, setCurrentScreen, currnetScreen } = props;
@@ -41,7 +30,6 @@ const DesktopNavigation = (props) => {
     return (
         <Hidden xsDown>
             <Box>
-            {/* <HideOnScroll> */}
                 <AppBar color="transparent" className={classes.appBar}>
                     <Toolbar className={classes.navBar}>
                         {screens.map((screen, index) => 
@@ -64,7 +52,6 @@ const DesktopNavigation = (props) => {
                         )}
                     </Toolbar>
                 </AppBar>
-            {/* </HideOnScroll> */}
             </Box>
         </Hidden>
     );

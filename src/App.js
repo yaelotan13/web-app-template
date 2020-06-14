@@ -1,10 +1,13 @@
 import React from 'react';
 import { ThemeProvider } from '@material-ui/styles';
 import theme from './theme/index';
-import { browserHistory } from './store';
+import { createBrowserHistory } from 'history';
 import { Router, BrowserRouter } from 'react-router-dom';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import Routes from './Routes';
+
+const browserHistory = createBrowserHistory();
 
 function App() {
   return (
