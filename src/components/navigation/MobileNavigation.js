@@ -8,7 +8,10 @@ import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyle = makeStyles((theme) => ({
     hamburgerIcon: {
-        alignSelf: 'flex-start'
+        alignSelf: 'flex-start',
+        [theme.breakpoints.down('xs')]: {
+            alignSelf: 'flex-end',
+        }
     },
     drawerList: {
         width: 250
@@ -42,7 +45,7 @@ const MobileNavigation = (props) => {
         <Hidden smUp>
             <Fragment>
                 <IconButton className={classes.hamburgerIcon} onClick={() => toggleDrawer()}>
-                    <MenuIcon style={{ color: 'white' }} />
+                    <MenuIcon />
                 </IconButton>
                 <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
                     <List className={classes.drawerList}>

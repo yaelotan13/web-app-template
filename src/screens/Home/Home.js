@@ -19,7 +19,10 @@ const useStyle = makeStyles(theme => ({
         marginTop: '-12vh',
         backgroundColor: 'white',
         borderBottom: '1px solid black',
-        zIndex: 10
+        zIndex: 10,
+        [theme.breakpoints.down('xs')]: {
+            marginTop: '-25vh', 
+        }
     }
 }));
 
