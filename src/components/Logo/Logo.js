@@ -16,7 +16,7 @@ const useStyle = makeStyles(theme => ({
     logo: {
         marginTop: '4vh',
         height: '100%',
-        width: '30vw',
+        width: '20vw',
         backgroundImage: `url(${logo})`,
         backgroundSize: 'contain',
         backgroundRepeat: 'no-repeat',

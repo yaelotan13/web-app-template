@@ -17,11 +17,12 @@ const useStyle = makeStyles(theme => ({
         flexDirection: 'column',
         alignItems: 'space-around',
         marginTop: '-12vh',
-        backgroundColor: 'white',
-        borderBottom: '1px solid black',
+        borderBottom: '1px solid #E6E6E6',
         zIndex: 10,
+        // backgroundColor: '#EEEEEE',
+        backgroundColor: 'white',
         [theme.breakpoints.down('xs')]: {
-            marginTop: '-25vh', 
+            marginTop: '-15vh', 
         }
     }
 }));
