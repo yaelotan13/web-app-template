@@ -21,6 +21,10 @@ const useStyle = makeStyles(theme => ({
         backgroundSize: 'contain',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
+        [theme.breakpoints.down('xs')]: {
+            marginTop: '25vh', 
+            width: '25vw',
+        }
     }
 }));
 

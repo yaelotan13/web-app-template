@@ -10,6 +10,7 @@ const useStyle = makeStyles((theme) => ({
     navBarContainer: {
         marginLeft: '1%',
         display: 'flex',
+        boxShadow: 'none'
     },
 }));
 
@@ -19,7 +20,7 @@ const Navigation = (props) => {
     const screens = getScreens();
 
     return (
-        <AppBar className={classes.navBarContainer}>
+        <AppBar className={classes.navBarContainer} color="transparent">
             <DesktopNavigation screens={screens} setCurrentScreen={setCurrentScreen} currnetScreen={currnetScreen} />
             <MobileNavigation screens={screens} setCurrentScreen={setCurrentScreen} currnetScreen={currnetScreen} />
         </AppBar>
