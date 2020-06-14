@@ -3,9 +3,7 @@ import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import Carousel from 'react-bootstrap/Carousel';
 
-import tuli1 from '../../../assets/images/tuli1.jpg';
-import tuli2 from '../../../assets/images/tuli2.jpg';
-import tuli3 from '../../../assets/images/tuli3.jpg';
+import { getHomeCarouselImages } from '../../../data/images';
 
 const useStyle = makeStyles(theme => ({
     container: {
@@ -29,15 +27,11 @@ const Images = (props) => {
     return (
         <Box className={classes.container}>
             <Carousel interval="3000" pause="false" className={classes.carousel}>
-                <Carousel.Item className={classes.imageContainer}>
-                    <img src={tuli1} alt="" />
-                </Carousel.Item>
-                <Carousel.Item className={classes.imageContainer}>
-                    <img src={tuli2} alt="" />
-                </Carousel.Item>
-                <Carousel.Item className={classes.imageContainer}>
-                    <img src={tuli3} alt="" />
-                </Carousel.Item>
+                {getHomeCarouselImages().map(image => 
+                    <Carousel.Item className={classes.imageContainer} key={image.id}>
+                        <img src={image.src} alt={image.alt} />
+                    </Carousel.Item>
+                )}
             </Carousel>
         </Box>
     )
