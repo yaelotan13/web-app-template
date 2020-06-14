@@ -18,7 +18,8 @@ const useStyle = makeStyles(theme => ({
         alignItems: 'space-around',
         marginTop: '-12vh',
         backgroundColor: 'white',
-        borderBottom: '1px solid black'
+        borderBottom: '1px solid black',
+        zIndex: 10
     }
 }));
 
