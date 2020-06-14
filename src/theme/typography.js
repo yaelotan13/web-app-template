@@ -1,10 +1,10 @@
 export default {
   h1: {
     fontWeight: 700,
-    fontSize: '38px',
+    fontSize: '50px',
     letterSpacing: '-0.24px',
-    lineHeight: '40px',
-    fontFamily: "'Muli', 'sans-serif'",
+    lineHeight: '55px',
+    fontFamily: "'Carter One', 'sans-serif'",
   },
   h2: {
     fontWeight: 600,
@@ -31,7 +31,7 @@ export default {
     fontWeight: 400,
     fontSize: '20px',
     letterSpacing: '-0.05px',
-    lineHeight: '20px',
+    lineHeight: '24px',
     fontFamily: "'Muli', sans-serif",
   },
   h6: {
