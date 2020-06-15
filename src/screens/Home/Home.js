@@ -10,6 +10,7 @@ import { Images } from './components';
 import About from '../About';
 import Gallery from '../Gallery';
 import Contact from '../Contact';
+import Footer from '../Footer';
 
 const useStyle = makeStyles(theme => ({
     headerContainer: {
@@ -62,6 +63,7 @@ const Home = (props) => {
                     </Box>
                 </ScrollAnimation>
             </Element>
+            <Footer />
         </Box>
     )
 };
