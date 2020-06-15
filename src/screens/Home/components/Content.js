@@ -6,7 +6,7 @@ const useStyle = makeStyles(theme => ({
     mobileContent: {
         width: '100%',
         height: '40vh',
-        backgroundColor: '#F6F6F6',
+        backgroundColor: '#FAFAFA',
         padding: '18vh 4vw 0 4vw'
     },
     content: {
