@@ -9,6 +9,7 @@ import Logo from '../../components/Logo';
 import { Images } from './components';
 import About from '../About';
 import Gallery from '../Gallery';
+import Contact from '../Contact';
 
 const useStyle = makeStyles(theme => ({
     headerContainer: {
@@ -51,6 +52,13 @@ const Home = (props) => {
                 <ScrollAnimation animateIn="fadeIn">
                     <Box className={classes.thirdScreen}>
                         <Gallery />
+                    </Box>
+                </ScrollAnimation>
+            </Element>
+            <Element name="screen4" className="element">
+                <ScrollAnimation animateIn="fadeIn">
+                    <Box className={classes.thirdScreen}>
+                        <Contact />
                     </Box>
                 </ScrollAnimation>
             </Element>

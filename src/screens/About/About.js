@@ -6,9 +6,6 @@ const useStyle = makeStyles(theme => ({
     container: {
         display: 'flex',
         margin: '8vh 0',
-        [theme.breakpoints.down('xs')]: {
-            marginTop: '-10vh'
-        }
     },
     coloredBox: {
         backgroundColor: '#F0F0F0',
@@ -44,8 +41,8 @@ const useStyle = makeStyles(theme => ({
         left: '67vw',
         zIndex: 2,
         [theme.breakpoints.down('sm')]: {
-            left: '87vw',
-            height: '70vh',
+            left: '90vw',
+            height: '90vh',
         },
     }
 }));
