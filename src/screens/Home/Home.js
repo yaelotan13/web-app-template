@@ -1,16 +1,16 @@
 import React from 'react';
 import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+import { Element } from 'react-scroll';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 import Navigation from '../../components/navigation';
 import Logo from '../../components/Logo';
 import { Images } from './components';
+import About from '../About';
+import Gallery from '../Gallery';
 
 const useStyle = makeStyles(theme => ({
-    container: {
-        width: '100vw',
-        height: '100vh'
-    },
     headerContainer: {
         position: 'fixed',
         display: 'felx',
@@ -19,24 +19,41 @@ const useStyle = makeStyles(theme => ({
         marginTop: '-12vh',
         borderBottom: '1px solid #E6E6E6',
         zIndex: 10,
-        // backgroundColor: '#EEEEEE',
         backgroundColor: 'white',
         [theme.breakpoints.down('xs')]: {
             marginTop: '-15vh', 
         }
-    }
+    },
 }));
 
 const Home = (props) => {
     const classes = useStyle();
 
     return (
-        <Box className={classes.container}>
-            <Box className={classes.headerContainer}>
-                <Logo />
-                <Navigation />
-            </Box>
-            <Images />
+        <Box>
+            <Element name="screen1" className="element">
+                <Box className={classes.firstScreen}>
+                    <Box className={classes.headerContainer}>
+                        <Logo />
+                        <Navigation />
+                    </Box>
+                    <Images />
+                </Box>
+            </Element>
+            <Element name="screen2" className="element">
+                <ScrollAnimation animateIn="fadeIn">
+                    <Box className={classes.secondScreen}>
+                        <About />
+                    </Box>
+                </ScrollAnimation>
+            </Element>
+            <Element name="screen3" className="element">
+                <ScrollAnimation animateIn="fadeIn">
+                    <Box className={classes.thirdScreen}>
+                        <Gallery />
+                    </Box>
+                </ScrollAnimation>
+            </Element>
         </Box>
     )
 };
