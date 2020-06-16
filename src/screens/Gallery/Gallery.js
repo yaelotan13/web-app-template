@@ -12,11 +12,11 @@ const useStyle = makeStyles(theme => ({
     header: {
         textAlign: 'center',
         [theme.breakpoints.down('sm')]: {
-            fontSize: 20,
+            fontSize: 32,
         }
     },
     subHeader: {
-        marginTop: '1vh',
+        marginTop: '3vh',
         textAlign: 'center',
         [theme.breakpoints.down('sm')]: {
             fontSize: 16,
@@ -49,7 +49,7 @@ const Gallery = (props) => {
     return (
         <Box className={classes.container}>
             <Box className={classes.content}>
-                <Typography variant="h3" className={classes.header}>A Tast Of My Events</Typography>
+                <Typography variant="h1" className={classes.header}>Gallery</Typography>
                 <Typography variant="h6" className={classes.subHeader}>Desctiption about the images that are below, saying nice things</Typography>
             </Box>
             <Box className={classes.galleryContainer}>

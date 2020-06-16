@@ -32,9 +32,11 @@ const useStyle = makeStyles(theme => ({
         }
     },
     head: {
-        fontSize: 26,
         textAlign: 'center',
-        marginBottom: '2vh'
+        marginBottom: '2vh',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 32
+        }
     },
     subHeader: {
         marginTop: '2vh'

@@ -4,7 +4,7 @@ export default {
     fontSize: '50px',
     letterSpacing: '-0.24px',
     lineHeight: '55px',
-    fontFamily: "'Carter One', 'sans-serif'",
+    fontFamily: "'Merienda', 'sans-serif'",
   },
   h2: {
     fontWeight: 600,
