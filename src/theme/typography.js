@@ -44,7 +44,7 @@ export default {
   subtitle1: {
     fontSize: '16px',
     letterSpacing: '-0.05px',
-    lineHeight: '30px',
+    lineHeight: '26px',
     fontFamily: "'Muli', sans-serif",
   },
   subtitle2: {

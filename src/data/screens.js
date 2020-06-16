@@ -5,15 +5,16 @@ import home from '../assets/icons/home.png';
 import about from '../assets/icons/about.png';
 import gallery from '../assets/icons/gallery.png';
 import contact from '../assets/icons/contact.png';
+import clients from '../assets/icons/clients.png';
 
-const screens = ['HOME', 'ABOUT', 'GALLERY', 'CONTACT ME'];
+const screens = ['HOME', 'ABOUT', 'GALLERY', 'CLIENTS', 'CONTACT ME'];
 
-const drawerIcons = [home, about, gallery, contact];
+const drawerIcons = [home, about, gallery, clients, contact];
 
 export const getDrawerIcon = (index) => {
     const iconStyle = {
-        width: 30,
-        height: 30,
+        width: 25,
+        height: 25,
         backgroundSize: 'contain',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center'
@@ -42,6 +43,12 @@ export const getDrawerIcon = (index) => {
             return <Box style={{
                 ...iconStyle,
                 backgroundImage: `url(${drawerIcons[3]})` 
+            }} />
+        }
+        case 4: {
+            return <Box style={{
+                ...iconStyle,
+                backgroundImage: `url(${drawerIcons[4]})` 
             }} />
         }
         default: {
