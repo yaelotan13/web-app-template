@@ -10,7 +10,8 @@ const useStyle = makeStyles(theme => ({
         height: '15vh',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'flex-end',
+        alignItems: 'center',
+        paddingTop: '10vh',
         paddingBottom: '2vh',
         backgroundColor: '#F6F6F6',
     },
@@ -22,8 +23,8 @@ const useStyle = makeStyles(theme => ({
         backgroundSize: 'contain',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        width: 30,
-        height: 30,
+        width: 28,
+        height: 28,
         marginLeft: 8
     }
 }));
