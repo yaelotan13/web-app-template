@@ -9,6 +9,7 @@ import Logo from '../../components/Logo';
 import { Images } from './components';
 import About from '../About';
 import Gallery from '../Gallery';
+import Clients from '../Clients';
 import Contact from '../Contact';
 import Footer from '../Footer';
 
@@ -57,6 +58,13 @@ const Home = (props) => {
                 </ScrollAnimation>
             </Element>
             <Element name="screen4" className="element">
+                <ScrollAnimation animateIn="fadeIn">
+                    <Box className={classes.thirdScreen}>
+                        <Clients />
+                    </Box>
+                </ScrollAnimation>
+            </Element>
+            <Element name="screen5" className="element">
                 <ScrollAnimation animateIn="fadeIn">
                     <Box className={classes.thirdScreen}>
                         <Contact />

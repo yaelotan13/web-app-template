@@ -36,7 +36,7 @@ const useStyle = makeStyles(theme => ({
         marginTop: '10vh',
         width: '6vw',
         height: '60vh',
-        backgroundColor: '#F3FF40',
+        backgroundColor: 'pink',
         position: 'absolute',
         left: '67vw',
         zIndex: 2,

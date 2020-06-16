@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Box, Typography, Button } from '@material-ui/core';
+import { Box, Typography, Button, CircularProgress } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+import axios from 'axios';
 
 import phone from '../../assets/icons/phone.png';
 import Input from '../../components/Input';
@@ -79,25 +80,24 @@ const useStyle = makeStyles(theme => ({
 
 const Contact = (props) => {
     const classes = useStyle();
+    const [sending, setSending] = useState(false);
+    const [serverError, setServerError] = useState(null);
     const [hasInputsError, setHasInputsError] = useState(false);
     const [inputs, setInputs] = useState({
         fullName: {
             value: '',
             touched: false,
             hasError: false,
-            errorMessage: 'please fill your name'
         },
         email: {
             value: '',
             touched: false,
             hasError: false,
-            errorMessage: 'please fill your email'
         },
         content: {
             value: '',
             touched: false,
             hasError: false,
-            errorMessage: 'please write a messgae'
         }
     });
 
@@ -135,11 +135,40 @@ const Contact = (props) => {
         return hasError;
     };
 
-    const submit = () => {
-        console.log('trying to submit');
-        console.log(inputs);
+    const resetInput = () => {
+        const updatedInputs = {...inputs};
+        const keys = Object.keys(inputs);
+
+        for (let key of keys) {
+            inputs[key].value = '';
+            inputs[key].hasError = false;
+            inputs[key].touched = false;
+        }
+
+        setInputs(updatedInputs);
+    };
+
+    const submit = async () => {
         const hasError = validate();
-        setHasInputsError(hasError);
+        if (hasError) {
+            setHasInputsError(hasError);
+        } else {
+            setSending(true);
+            try {
+                const response = await axios.post('/send', { 
+                    fullName: inputs.fullName.value,
+                    email: inputs.email.value,
+                    content: inputs.content.value
+                });
+                
+                console.log(response);
+                response.status === 200 ? setServerError(false) : setServerError(true);
+                setSending(false);
+                resetInput();
+            } catch (error) {
+                setServerError(true);
+            }
+        }
     };
 
     return (
@@ -161,7 +190,9 @@ const Contact = (props) => {
                     <Input label="Full Name" type="text" name="fullName" value={inputs.fullName.value} handleChange={handleChange} error={inputs.fullName.hasError} />
                     <Input label="Email" type="email" name="email" value={inputs.email.value} handleChange={handleChange} error={inputs.email.hasError} />
                     <Input textArea name="content" value={inputs.content.value} handleChange={handleChange} error={inputs.content.hasError} />
-                    <Button className={classes.button} onClick={submit}>SEND</Button>
+                    <Button className={classes.button} onClick={submit}>
+                        {sending ? <CircularProgress size="30" /> : 'SEND'}
+                    </Button>
                     {hasInputsError && <Typography variant="subtitle1" className={classes.error}>Please fill all the fileds</Typography>}
                 </Box>
             </Box>
