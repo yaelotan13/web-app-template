@@ -6,6 +6,7 @@ const useStyle = makeStyles(theme => ({
     input: {
         width: '40vw',
         marginBottom: '5vh',
+        backgroundColor: 'white',
         [theme.breakpoints.down('sm')]: {
             width: '80vw',
         }

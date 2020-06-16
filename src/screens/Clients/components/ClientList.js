@@ -11,8 +11,16 @@ const useStyle = makeStyles(theme => ({
         flexWrap: 'wrap',
         width: '80vw',
         marginLeft: '10vw',
-        justifyContent: 'center',
-        marginTop: '8vh'
+        justifyContent: 'space-between',
+        marginTop: '8vh',
+        [theme.breakpoints.down('sm')]: {
+            width: '90vw',
+            marginLeft: '5vw'
+        },
+        [theme.breakpoints.down('xs')]: {
+            width: '80vw',
+            marginLeft: '10vw',
+        }
     }
 }));
 

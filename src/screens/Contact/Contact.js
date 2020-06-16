@@ -4,58 +4,78 @@ import { makeStyles } from '@material-ui/styles';
 import axios from 'axios';
 
 import phone from '../../assets/icons/phone.png';
+import email from '../../assets/icons/email.png';
 import Input from '../../components/Input';
 
 const useStyle = makeStyles(theme => ({
     container: {
         marginTop: '15vh',
-        height: '75vh',
+        backgroundColor: '#F6F6F6',
+        paddingTop: '5vh',
     },
     contentContainer: {
         display: 'flex',
-        [theme.breakpoints.down('sm')]: {
-            flexDirection: 'column-reverse',
-        }
+        flexDirection: 'column',
+        alignItems: 'center',
+        width: '60vw',
+        marginLeft: '20vw',
     },
     content: {
-        width: '50vw',
-        paddingLeft: '5vw',
-        paddingTop: '8vh',
+        paddingTop: '2vh',
         [theme.breakpoints.down('sm')]: {
-            width: '90vw',
-            marginLeft: '5vw',
+            width: '100vw',
+            paddingLeft: 0,
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center'
         }
     },
     head: {
         fontSize: 26,
-        textAlign: 'center'
+        textAlign: 'center',
+        marginBottom: '2vh'
     },
     subHeader: {
         marginTop: '2vh'
     },
-    phoneContainer: {
+    contactContainer: {
         display: 'flex',
         alignItems: 'center',
-        marginTop: '3vh',
-        [theme.breakpoints.down('sm')]: {
-            marginTop: 0,
-        }
+    },
+    separator: {
+        margin: '0 3vw',
+        fontSize: 40,
+        color: '#A8A6A7'
     },
     icon: {
         width: '5vw',
         height: '5vh',
-        backgroundImage: `url(${phone})`,
         backgroundSize: 'contain',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        marginRight: '1vw',
         [theme.breakpoints.down('sm')]: {
-            width: '10vw',
-            height: '10vh',
+            marginRight: '1vw'
+        },
+        [theme.breakpoints.down('xs')]: {
+            marginRight: '2vw',
+            width: '7vw',
+            height: '7vh',
+        }
+    },
+    phone: {
+        backgroundImage: `url(${phone})`,
+    },
+    email: {
+        backgroundImage: `url(${email})`,
+    },
+    formTitle: {
+        marginBottom: '3vh',
+        [theme.breakpoints.down('xs')]: {
+            fontSize: 16
         }
     },
     form: {
-        width: '50vw',
         display: 'flex',
         flexDirection: 'column',
         paddingTop: '10vh',
@@ -69,6 +89,7 @@ const useStyle = makeStyles(theme => ({
     button: {
         backgroundColor: '#F3FF40',
         padding: '1vh 3vw',
+        width: '15vw',
         [theme.breakpoints.down('sm')]: {
             width: '40vw',
         }
@@ -90,6 +111,11 @@ const Contact = (props) => {
             hasError: false,
         },
         email: {
+            value: '',
+            touched: false,
+            hasError: false,
+        },
+        phoneNumber: {
             value: '',
             touched: false,
             hasError: false,
@@ -176,19 +202,23 @@ const Contact = (props) => {
             <Typography variant="h1" className={classes.head}>Contact Me</Typography>
             <Box className={classes.contentContainer}>
                 <Box className={classes.content}>
-                    <Typography variant="subtitle1">
-                        A paragraph about why you should send me a messge and more info about me.
-                        <br />
-                        Also there would be here Tuli's phone number so she could get whatts'ups
-                    </Typography>
-                    <Box className={classes.phoneContainer}>
-                        <Box className={classes.icon} />
-                        <Typography>054-6323450</Typography>
+                    <Box className={classes.contactContainer}>
+                        <Box className={classes.contactContainer}>
+                            <Box className={[classes.icon, classes.phone].join(' ')} />
+                            <Typography>054-6323450</Typography>
+                        </Box>
+                        <Typography className={classes.separator}>|</Typography>
+                        <Box className={classes.contactContainer}>
+                            <Box className={[classes.icon, classes.email].join(' ')} />
+                            <Typography>tuli@gmail.com</Typography>
+                        </Box>
                     </Box>
                 </Box>
                 <Box className={classes.form}>
+                    <Typography variant="subtitle1" className={classes.formTitle}>Or leave me a message here</Typography>
                     <Input label="Full Name" type="text" name="fullName" value={inputs.fullName.value} handleChange={handleChange} error={inputs.fullName.hasError} />
                     <Input label="Email" type="email" name="email" value={inputs.email.value} handleChange={handleChange} error={inputs.email.hasError} />
+                    <Input label="Phone Number" type="text" name="phoneNumber" value={inputs.phoneNumber.value} handleChange={handleChange} error={inputs.phoneNumber.hasError} />
                     <Input textArea name="content" value={inputs.content.value} handleChange={handleChange} error={inputs.content.hasError} />
                     <Button className={classes.button} onClick={submit}>
                         {sending ? <CircularProgress size="30" /> : 'SEND'}

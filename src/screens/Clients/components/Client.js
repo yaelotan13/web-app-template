@@ -1,5 +1,5 @@
 import React from 'react';
-import { Avatar, Box } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 const useStyle = makeStyles(theme => ({
@@ -10,7 +10,19 @@ const useStyle = makeStyles(theme => ({
         marginTop: '3vh',
         backgroundSize: 'contain',
         backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat'
+        backgroundRepeat: 'no-repeat',
+        [theme.breakpoints.down('sm')]: {
+            width: 100,
+            height: 40,
+            marginTop: '2vh',
+            marginRight: 8,
+        },
+        [theme.breakpoints.down('xs')]: {
+            width: 80,
+            height: 40,
+            marginTop: '2vh',
+            marginRight: 8,
+        }
     }
 }));
 
@@ -19,7 +31,6 @@ const Client = (props) => {
     const { img, alt } = props;
 
     return (
-        // <Avatar className={classes.client} alt={alt} src={img} variant="square" />
         <Box className={classes.client} alt={alt} style={{ backgroundImage: `url(${img})`}}/>
     )
 };

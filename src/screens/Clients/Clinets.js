@@ -6,14 +6,14 @@ import { ClientList } from './components';
 
 const useStyle = makeStyles(theme => ({
     headerContainer: {
-        marginTop: '15vh'
+        padding: '15vh 5vw 0 5vw'
     },
     mainHeader: {
         textAlign: 'center'
     },
     subHeader: {
         textAlign: 'center',
-        marginTop: '2vh'
+        marginTop: '2vh',
     }
 }));
 
