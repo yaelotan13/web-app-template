@@ -9,7 +9,10 @@ const useStyle = makeStyles(theme => ({
         padding: '15vh 5vw 0 5vw'
     },
     mainHeader: {
-        textAlign: 'center'
+        textAlign: 'center',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 32
+        }
     },
     subHeader: {
         textAlign: 'center',
@@ -23,7 +26,7 @@ const Clients = (props) => {
     return (
         <Box>
             <Box className={classes.headerContainer}>
-                <Typography variant="h2" className={classes.mainHeader}>Clients</Typography>
+                <Typography variant="h1" className={classes.mainHeader}>Clients</Typography>
                 <Typography variant="subtitle1" className={classes.subHeader}>
                     Some text about my clients that are the best and very known. 
                     <br />

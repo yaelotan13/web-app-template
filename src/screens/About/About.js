@@ -59,6 +59,9 @@ const useStyle = makeStyles(theme => ({
     title: {
         margin: '5vh 0 1vh 0',
         textAlign: 'center',
+        [theme.breakpoints.down('sm')]: {
+            fontSize: 32
+        }
     },
     eventsSubTitle: {
         textAlign: 'center',
@@ -79,7 +82,7 @@ const About = (props) => {
             </Box>
             <Box className={classes.sideColoredBox} />
             <Box className={classes.eventsContainer}>
-                <Typography variant="h4" className={classes.title}>Event Types</Typography>
+                <Typography variant="h1" className={classes.title}>Event Types</Typography>
                 <Typography variant="subtitle1" color="textSecondary" className={classes.eventsSubTitle}>My events are tailored maid to suit your needs, whether it's a business event or a personal event</Typography>
                 <EventTypes />
             </Box>
