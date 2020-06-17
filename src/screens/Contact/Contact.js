@@ -21,7 +21,7 @@ const useStyle = makeStyles(theme => ({
         marginLeft: '20vw',
     },
     content: {
-        paddingTop: '2vh',
+        paddingTop: '4vh',
         [theme.breakpoints.down('sm')]: {
             width: '100vw',
             paddingLeft: 0,
@@ -80,7 +80,7 @@ const useStyle = makeStyles(theme => ({
     form: {
         display: 'flex',
         flexDirection: 'column',
-        paddingTop: '10vh',
+        paddingTop: '8vh',
         alignItems: 'center',
         [theme.breakpoints.down('sm')]: {
             width: '90vw',

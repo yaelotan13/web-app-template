@@ -22,7 +22,6 @@ const useStyle = makeStyles(theme => ({
     },
     header: {
         textAlign: 'center',
-        fontSize: 40,
         marginBottom: '5vh',
         color: '#363636',
         [theme.breakpoints.down('xs')]: {

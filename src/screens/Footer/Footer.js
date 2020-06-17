@@ -35,7 +35,7 @@ const Footer = (props) => {
     return (
         <Box className={classes.footer}>
             <Typography variant="h6" className={classes.content}>
-                Build by Yael 
+                Built by Yael 
             </Typography>
             <Box className={classes.flower} />
         </Box>

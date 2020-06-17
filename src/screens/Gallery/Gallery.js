@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Box, GridList, GridListTile, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import { getGalleryImages } from '../../data/images';
+import { LargeImage } from './components';
 
 const useStyle = makeStyles(theme => ({
     content: {
@@ -40,14 +41,29 @@ const useStyle = makeStyles(theme => ({
             width: '95vw',
         }
       },
+      img: {
+          cursor: 'pointer'
+      }
 }));
 
 const Gallery = (props) => {
     const classes = useStyle();
     const images = getGalleryImages();
+    const [open, setOpen] = useState(false);
+    const [curImage, setCurImage] = useState(null);
+
+    const handleImageClicked = (image) => {
+        setCurImage(image);
+        setOpen(true);
+    };
+
+    const handleClose = () => {
+        setOpen(false);
+    };
 
     return (
         <Box className={classes.container}>
+            <LargeImage open={open} handleClose={handleClose} img={curImage} />
             <Box className={classes.content}>
                 <Typography variant="h1" className={classes.header}>Gallery</Typography>
                 <Typography variant="h6" className={classes.subHeader}>Desctiption about the images that are below, saying nice things</Typography>
@@ -56,7 +72,7 @@ const Gallery = (props) => {
                 <GridList cellHeight={160} className={classes.gridList} cols={3}>
                     {images.map((tile) => (
                         <GridListTile key={tile.img} cols={tile.cols || 1}>
-                        <img src={tile.img} alt={tile.title} />
+                            <img className={classes.img} src={tile.img} alt={tile.title} onClick={() => handleImageClicked(tile.img)} />
                         </GridListTile>
                     ))}
                 </GridList>
