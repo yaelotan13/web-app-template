@@ -4,6 +4,7 @@ import { makeStyles } from '@material-ui/styles';
 import { Link } from 'react-scroll';
 import { getDrawerIcon } from '../../data/screens';
 
+import Flags from '../Flags';
 import MenuIcon from '@material-ui/icons/Menu';
 
 const useStyle = makeStyles((theme) => ({
@@ -11,6 +12,11 @@ const useStyle = makeStyles((theme) => ({
         alignSelf: 'flex-start',
         [theme.breakpoints.down('xs')]: {
             alignSelf: 'flex-end',
+        }
+    },
+    hamburgerIconLeft: {
+        [theme.breakpoints.down('xs')]: {
+            alignSelf: 'flex-start',
         }
     },
     drawerList: {
@@ -22,6 +28,12 @@ const useStyle = makeStyles((theme) => ({
         display: 'flex',
         alignItems: 'center',
     },
+    drawerItemRightToLeft: {
+        flexDirection: 'row-reverse',
+        textAlign: 'right',
+        marginLeft: '6vw',
+        paddingRight: 0
+    },
     highlight: {
         backgroundColor: theme.palette.background.default
     },
@@ -30,24 +42,48 @@ const useStyle = makeStyles((theme) => ({
         fontFamily: theme.typography.h6.fontFamily,
         fontWeight: theme.typography.h5.fontWeight,
     },
+    drawerItemTextRightToLeft: {
+        marginRight: 12
+    }
 }));
 
 const MobileNavigation = (props) => {
     const classes = useStyle();
     const [openDrawer, setOpenDrawer] = useState(false);
-    const { setCurrentScreen, currnetScreen, screens } = props;
+    const { setCurrentScreen, currnetScreen, screens, rightToLeft } = props;
 
     const toggleDrawer = () => {
         setOpenDrawer(prevStateOpened => prevStateOpened ? false : true);
     };
 
+    const getDrawerItemStyle = (index) => {
+        let style = [classes.drawerItem];
+
+        if (rightToLeft) {
+            style.push(classes.drawerItemRightToLeft);
+        }
+
+        if (currnetScreen === `screen${index + 1}`) {
+            style.push(classes.highlight)
+        }
+        
+        return style;
+    }
+
     return (
         <Hidden smUp>
             <Fragment>
-                <IconButton className={classes.hamburgerIcon} onClick={() => toggleDrawer()}>
+                <IconButton 
+                    className={rightToLeft ? [classes.hamburgerIcon, classes.hamburgerIconLeft].join(' ') : classes.hamburgerIcon} 
+                    onClick={() => toggleDrawer()}
+                >
                     <MenuIcon />
                 </IconButton>
-                <Drawer open={openDrawer} onClose={() => setOpenDrawer(false)}>
+                <Drawer 
+                    open={openDrawer} 
+                    onClose={() => setOpenDrawer(false)}
+                    anchor={rightToLeft ? 'right' : 'left'}
+                >
                     <List className={classes.drawerList}>
                         {screens.map((screen, index) => 
                             <Link 
@@ -60,13 +96,14 @@ const MobileNavigation = (props) => {
                                 duration={500}
                                 onSetActive={() => {setCurrentScreen(`screen${index + 1}`)}}
                             >
-                                <ListItem className={currnetScreen === `screen${index + 1}` ? [classes.drawerItem, classes.highlight].join(' '): classes.drawerItem}>
+                                <ListItem className={getDrawerItemStyle(index + 1)}>
                                     <ListItemIcon>{getDrawerIcon(index)}</ListItemIcon>
-                                    <ListItemText className={classes.drawerItemText}>{screen}</ListItemText>
+                                    <ListItemText className={rightToLeft ? [classes.drawerItemText, classes.drawerItemTextRightToLeft] : classes.drawerItemText}>{screen}</ListItemText>
                                 </ListItem>
                             </Link>
                         )}
                     </List>
+                    <Flags mobile rightToLeft />
                 </Drawer>
             </Fragment>
         </Hidden>

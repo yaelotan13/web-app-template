@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+import { useTranslation } from 'react-i18next';
 
 import { ClientList } from './components';
 
@@ -22,16 +23,13 @@ const useStyle = makeStyles(theme => ({
 
 const Clients = (props) => {
     const classes = useStyle();
+    const [t, i18n] = useTranslation();
 
     return (
         <Box>
             <Box className={classes.headerContainer}>
-                <Typography variant="h1" className={classes.mainHeader}>Clients</Typography>
-                <Typography variant="subtitle1" className={classes.subHeader}>
-                    Some text about my clients that are the best and very known. 
-                    <br />
-                    My work with them produced the best events ever.
-                </Typography>
+                <Typography variant="h1" className={classes.mainHeader}>{t("clients")}</Typography>
+                <Typography variant="subtitle1" className={classes.subHeader}>{t("clients-description")}</Typography>
             </Box>
             <ClientList />
         </Box>

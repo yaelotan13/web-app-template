@@ -8,7 +8,7 @@ const useStyle = makeStyles(theme => ({
     container: {
         marginBottom: '10vh',
         width: '100vw',
-        height: '20vh',
+        height: '18vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -19,7 +19,7 @@ const useStyle = makeStyles(theme => ({
     logo: {
         marginTop: '4vh',
         height: '100%',
-        width: '20vw',
+        width: '35vw',
         backgroundImage: `url(${logo})`,
         backgroundSize: 'contain',
         backgroundRepeat: 'no-repeat',

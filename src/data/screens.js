@@ -7,8 +7,6 @@ import gallery from '../assets/icons/gallery.png';
 import contact from '../assets/icons/contact.png';
 import clients from '../assets/icons/clients.png';
 
-const screens = ['HOME', 'ABOUT', 'GALLERY', 'CLIENTS', 'CONTACT ME'];
-
 const drawerIcons = [home, about, gallery, clients, contact];
 
 export const getDrawerIcon = (index) => {
@@ -60,4 +58,5 @@ export const getDrawerIcon = (index) => {
     }
 };
 
-export const getScreens = () => screens;
+export const getScreens = (t) =>
+    [t('nav-home'), t('nav-about'), t('nav-gallery'), t('nav-clients'), t('nav-contact-me')];

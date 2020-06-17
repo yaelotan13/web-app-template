@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-
+import { useTranslation } from 'react-i18next';
 import flower from '../../assets/icons/flower.png';
 
 const useStyle = makeStyles(theme => ({
@@ -15,6 +15,9 @@ const useStyle = makeStyles(theme => ({
         paddingBottom: '2vh',
         backgroundColor: '#F6F6F6',
     },
+    rightToLeft: {
+        flexDirection: 'row-reverse'
+    },
     content: {
         color: '#525252'
     },
@@ -25,18 +28,18 @@ const useStyle = makeStyles(theme => ({
         backgroundRepeat: 'no-repeat',
         width: 28,
         height: 28,
-        marginLeft: 8
-    }
+        marginLeft: 8,
+        marginRight: 8
+    },
 }));
 
 const Footer = (props) => {
     const classes = useStyle();
+    const [t, i18n] = useTranslation();
 
     return (
-        <Box className={classes.footer}>
-            <Typography variant="h6" className={classes.content}>
-                Built by Yael 
-            </Typography>
+        <Box className={i18n.language === "Hebrew" ? [classes.footer, classes.rightToLeft].join(' ') : classes.footer}>
+            <Typography variant="h6" className={classes.content}>{t("built-by-yael")}</Typography>
             <Box className={classes.flower} />
         </Box>
     )

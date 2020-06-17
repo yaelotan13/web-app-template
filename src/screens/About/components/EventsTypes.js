@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+import { useTranslation } from 'react-i18next';
 
 import { getEvents } from '../../../data/events';
 import Event from './Event';
@@ -21,7 +22,8 @@ const useStyle = makeStyles(theme => ({
 
 const EventTypes = (props) => {
     const classes = useStyle();
-    const events = getEvents();
+    const [t, i18n] = useTranslation();
+    const events = getEvents(t);
 
     return (
         <Box className={classes.container}>

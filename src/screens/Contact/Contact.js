@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, Typography, Button, CircularProgress } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 
 import phone from '../../assets/icons/phone.png';
 import email from '../../assets/icons/email.png';
@@ -105,6 +106,7 @@ const useStyle = makeStyles(theme => ({
 
 const Contact = (props) => {
     const classes = useStyle();
+    const [t, i18n] = useTranslation();
     const [sending, setSending] = useState(false);
     const [serverError, setServerError] = useState(null);
     const [hasInputsError, setHasInputsError] = useState(false);
@@ -203,7 +205,7 @@ const Contact = (props) => {
 
     return (
         <Box className={classes.container}>
-            <Typography variant="h1" className={classes.head}>Contact Me</Typography>
+            <Typography variant="h1" className={classes.head}>{t("contact-me")}</Typography>
             <Box className={classes.contentContainer}>
                 <Box className={classes.content}>
                     <Box className={classes.contactContainer}>
@@ -219,15 +221,15 @@ const Contact = (props) => {
                     </Box>
                 </Box>
                 <Box className={classes.form}>
-                    <Typography variant="subtitle1" className={classes.formTitle}>Or leave me a message here</Typography>
-                    <Input label="Full Name" type="text" name="fullName" value={inputs.fullName.value} handleChange={handleChange} error={inputs.fullName.hasError} />
-                    <Input label="Email" type="email" name="email" value={inputs.email.value} handleChange={handleChange} error={inputs.email.hasError} />
-                    <Input label="Phone Number" type="text" name="phoneNumber" value={inputs.phoneNumber.value} handleChange={handleChange} error={inputs.phoneNumber.hasError} />
-                    <Input textArea name="content" value={inputs.content.value} handleChange={handleChange} error={inputs.content.hasError} />
+                    <Typography variant="subtitle1" className={classes.formTitle}>{t("leave-a-message")}</Typography>
+                    <Input label={t("full-name")} type="text" name="fullName" value={inputs.fullName.value} handleChange={handleChange} error={inputs.fullName.hasError} />
+                    <Input label={t("email")} type="email" name="email" value={inputs.email.value} handleChange={handleChange} error={inputs.email.hasError} />
+                    <Input label={t("phone-number")} type="text" name="phoneNumber" value={inputs.phoneNumber.value} handleChange={handleChange} error={inputs.phoneNumber.hasError} />
+                    <Input textArea placeholder={t("type-your-message-here")} name="content" value={inputs.content.value} handleChange={handleChange} error={inputs.content.hasError} />
                     <Button className={classes.button} onClick={submit}>
-                        {sending ? <CircularProgress size="30" /> : 'SEND'}
+                        {sending ? <CircularProgress size="30" /> : t("send")}
                     </Button>
-                    {hasInputsError && <Typography variant="subtitle1" className={classes.error}>Please fill all the fileds</Typography>}
+                    {hasInputsError && <Typography variant="subtitle1" className={classes.error}>{t("fill-all-fields-error")}</Typography>}
                 </Box>
             </Box>
         </Box>
