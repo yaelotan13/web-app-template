@@ -1,5 +1,5 @@
-import businessEvent from '../assets/images/concert.jpg';
-import privateEvent from '../assets/images/wedding-event.jpg';
+import businessEvent from '../assets/images/events/show.jpg';
+import privateEvent from '../assets/images/events/wedding.jpg';
 
 export const getEvents = (t) => 
     [
