@@ -1,18 +1,18 @@
-import tuli1 from '../assets/images/tuli1.jpg';
-import tuli2 from '../assets/images/tuli2.jpg';
-import tuli3 from '../assets/images/tuli3.jpg';
+import tuli1 from '../assets/images/events/table2.jpg';
+import tuli2 from '../assets/images/events/kids2.jpeg';
+import tuli3 from '../assets/images/events/tour-crowd.jpeg';
 
-import img1 from '../assets/images/beach.jpg';
-import img2 from '../assets/images/birthday.jpg';
-import img3 from '../assets/images/cocus.jpg';
-import img4 from '../assets/images/lights.jpg';
-import img5 from '../assets/images/party.jpg';
-import img6 from '../assets/images/wedding4.jpg';
-import img7 from '../assets/images/party3.jpg';
-import img8 from '../assets/images/party5.jpg';
-import img9 from '../assets/images/party6.jpg';
-import img10 from '../assets/images/party9.jpg';
-import img11 from '../assets/images/wedding1.jpg';
+import img1 from '../assets/images/events/kids1.jpeg';
+import img2 from '../assets/images/events/people.jpg';
+import img3 from '../assets/images/events/pillows.jpg';
+import img4 from '../assets/images/events/kids2.jpeg';
+import img5 from '../assets/images/events/rabin.jpeg';
+import img6 from '../assets/images/events/table.jpg';
+import img7 from '../assets/images/events/tour-crowd.jpeg';
+import img8 from '../assets/images/events/wedding.jpg';
+import img9 from '../assets/images/events/tour-volleyball.jpeg';
+import img10 from '../assets/images/events/show.jpg';
+import img11 from '../assets/images/events/table2.jpg';
 
 const homeCarouselImages = [
     {

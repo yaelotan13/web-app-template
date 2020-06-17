@@ -1,19 +1,18 @@
-import client1 from '../assets/images/amazon.png';
-import client2 from '../assets/images/asos.png';
-import client3 from '../assets/images/facebook.png';
-import client4 from '../assets/images/get.jpg';
-import client5 from '../assets/images/google.png';
-import client6 from '../assets/images/instagram.jpg';
-import client7 from '../assets/images/ironsource.png';
-import client8 from '../assets/images/microsoft.jpg';
-import client9 from '../assets/images/spotify.png';
-import client10 from '../assets/images/tik-tok.png';
-import client11 from '../assets/images/tlv.jpg';
-import client12 from '../assets/images/waze.png';
-import client13 from '../assets/images/wix.png';
-import client14 from '../assets/images/youtube.png';
+import client1 from '../assets/images/clients/atarim.png';
+import client2 from '../assets/images/clients/bat-yam.png';
+import client3 from '../assets/images/clients/beach-volleyball.jpg';
+import client4 from '../assets/images/clients/british-embassy.jpg';
+import client5 from '../assets/images/clients/client1.jpeg';
+import client6 from '../assets/images/clients/client2.jpeg';
+import client7 from '../assets/images/clients/client3.jpeg';
+import client8 from '../assets/images/clients/digitel.jpg';
+import client9 from '../assets/images/clients/footy.jpeg';
+import client10 from '../assets/images/clients/liveperson.jpg';
+import client11 from '../assets/images/clients/mexico-embassy.jpeg';
+import client12 from '../assets/images/clients/tlv.jpg';
 
-const clients = [client1, client2, client3, client4, client5, client6, client7, client8, client9, client10, client11, client12, client13, client14];
+
+const clients = [client1, client2, client3, client4, client5, client6, client7, client8, client9, client10, client11, client12];
 
 const clientsData = [
     { 
@@ -74,16 +73,6 @@ const clientsData = [
     { 
         id: 11,
         img: clients[11],
-        alt: ""
-    },
-    { 
-        id: 12,
-        img: clients[12],
-        alt: ""
-    },
-    { 
-        id: 13,
-        img: clients[13],
         alt: ""
     },
 ];
