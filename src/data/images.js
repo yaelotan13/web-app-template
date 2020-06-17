@@ -7,10 +7,10 @@ import img2 from '../assets/images/events/people.jpg';
 import img3 from '../assets/images/events/pillows.jpg';
 import img4 from '../assets/images/events/kids2.jpeg';
 import img5 from '../assets/images/events/rabin.jpeg';
-import img6 from '../assets/images/events/table.jpg';
+import img6 from '../assets/images/events/footy2.jpeg';
 import img7 from '../assets/images/events/tour-crowd.jpeg';
 import img8 from '../assets/images/events/wedding.jpg';
-import img9 from '../assets/images/events/tour-volleyball.jpeg';
+import img9 from '../assets/images/events/volley2.jpeg';
 import img10 from '../assets/images/events/show.jpg';
 import img11 from '../assets/images/events/table2.jpg';
 
