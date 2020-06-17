@@ -11,7 +11,10 @@ const useStyle = makeStyles(theme => ({
         height: '20vh',
         display: 'flex',
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        [theme.breakpoints.down('xs')]: {
+            height: '22vh',
+        }
     },
     logo: {
         marginTop: '4vh',
@@ -23,7 +26,7 @@ const useStyle = makeStyles(theme => ({
         backgroundPosition: 'center',
         [theme.breakpoints.down('xs')]: {
             marginTop: '25vh', 
-            width: '25vw',
+            width: '40vw',
         }
     }
 }));

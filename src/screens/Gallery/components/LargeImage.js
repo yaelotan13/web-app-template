@@ -22,7 +22,11 @@ const useStyle = makeStyles(theme => ({
         position: 'absolute',
         right: -8,
         top: 2,
-        cursor: 'pointer'
+        cursor: 'pointer',
+        [theme.breakpoints.down('xs')]: {
+            right: 8,
+            top: 4,
+        }
     },
     img: {
         width: '50vw',

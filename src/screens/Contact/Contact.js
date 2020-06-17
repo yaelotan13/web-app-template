@@ -28,7 +28,8 @@ const useStyle = makeStyles(theme => ({
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            paddingTop: '0vh',
         }
     },
     head: {
@@ -73,6 +74,7 @@ const useStyle = makeStyles(theme => ({
     },
     formTitle: {
         marginBottom: '3vh',
+        color: '#4B4B4B',
         [theme.breakpoints.down('xs')]: {
             fontSize: 16
         }
@@ -85,7 +87,7 @@ const useStyle = makeStyles(theme => ({
         [theme.breakpoints.down('sm')]: {
             width: '90vw',
             marginLeft: '5vw',
-            marginTop: '-5vh'
+            marginTop: '-2vh'
         }
     },
     button: {
