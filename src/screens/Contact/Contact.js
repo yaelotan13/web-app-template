@@ -40,6 +40,9 @@ const useStyle = makeStyles(theme => ({
             fontSize: 32
         }
     },
+    rightToLeftMainHeader: {
+        fontFamily: "'Amatic SC', cursive"
+    },
     subHeader: {
         marginTop: '2vh'
     },
@@ -79,6 +82,10 @@ const useStyle = makeStyles(theme => ({
         [theme.breakpoints.down('xs')]: {
             fontSize: 16
         }
+    },
+    formTitleRightToLeft: {
+        fontFamily: "'Alef', sans-serif",
+        marginTop: 4
     },
     form: {
         display: 'flex',
@@ -203,9 +210,11 @@ const Contact = (props) => {
         }
     };
 
+    const rightToLeft = () => i18n.language === "Hebrew";
+
     return (
         <Box className={classes.container}>
-            <Typography variant="h1" className={classes.head}>{t("contact-me")}</Typography>
+            <Typography variant="h1" className={rightToLeft ? [classes.head, classes.rightToLeftMainHeader].join(' ') : classes.head}>{t("contact-me")}</Typography>
             <Box className={classes.contentContainer}>
                 <Box className={classes.content}>
                     <Box className={classes.contactContainer}>
@@ -221,11 +230,11 @@ const Contact = (props) => {
                     </Box>
                 </Box>
                 <Box className={classes.form}>
-                    <Typography variant="subtitle1" className={classes.formTitle}>{t("leave-a-message")}</Typography>
-                    <Input label={t("full-name")} type="text" name="fullName" value={inputs.fullName.value} handleChange={handleChange} error={inputs.fullName.hasError} />
-                    <Input label={t("email")} type="email" name="email" value={inputs.email.value} handleChange={handleChange} error={inputs.email.hasError} />
-                    <Input label={t("phone-number")} type="text" name="phoneNumber" value={inputs.phoneNumber.value} handleChange={handleChange} error={inputs.phoneNumber.hasError} />
-                    <Input textArea placeholder={t("type-your-message-here")} name="content" value={inputs.content.value} handleChange={handleChange} error={inputs.content.hasError} />
+                    <Typography variant="subtitle1" className={rightToLeft ? [classes.formTitle, classes.formTitleRightToLeft].join(' ') : classes.formTitle}>{t("leave-a-message")}</Typography>
+                    <Input label={t("full-name")} type="text" name="fullName" value={inputs.fullName.value} handleChange={handleChange} error={inputs.fullName.hasError} rightToLeft />
+                    <Input label={t("email")} type="email" name="email" value={inputs.email.value} handleChange={handleChange} error={inputs.email.hasError} rightToLeft />
+                    <Input label={t("phone-number")} type="text" name="phoneNumber" value={inputs.phoneNumber.value} handleChange={handleChange} error={inputs.phoneNumber.hasError} rightToLeft />
+                    <Input textArea placeholder={t("type-your-message-here")} name="content" value={inputs.content.value} handleChange={handleChange} error={inputs.content.hasError} rightToLeft />
                     <Button className={classes.button} onClick={submit}>
                         {sending ? <CircularProgress size="30" /> : t("send")}
                     </Button>

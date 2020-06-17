@@ -17,12 +17,19 @@ const useStyle = makeStyles(theme => ({
             fontSize: 32,
         }
     },
+    rightToLeftHeader: {
+        fontFamily: "'Amatic SC', cursive"
+    },
     subHeader: {
         marginTop: '3vh',
         textAlign: 'center',
         [theme.breakpoints.down('sm')]: {
             fontSize: 16,
         }
+    },
+    subHeaderRightToLeft: {
+        fontFamily: "'Alef', sans-serif",
+        marginTop: 4
     },
     galleryContainer: {
         display: 'flex',
@@ -54,6 +61,8 @@ const Gallery = (props) => {
     const [curImage, setCurImage] = useState(null);
     const [t, i18n] = useTranslation();
 
+    const rightToLeft = () => i18n.language === "Hebrew";
+
     const handleImageClicked = (image) => {
         setCurImage(image);
         setOpen(true);
@@ -67,8 +76,8 @@ const Gallery = (props) => {
         <Box className={classes.container}>
             <LargeImage open={open} handleClose={handleClose} img={curImage} />
             <Box className={classes.content}>
-                <Typography variant="h1" className={classes.header}>{t("gallery")}</Typography>
-                <Typography variant="h6" className={classes.subHeader}>{t("gallery-description")}</Typography>
+                <Typography variant="h1" className={rightToLeft ? [classes.header, classes.rightToLeftHeader].join(' ') : classes.header}>{t("gallery")}</Typography>
+                <Typography variant="h6" className={rightToLeft ? [classes.subHeader, classes.subHeaderRightToLeft].join(' ') : classes.subHeader}>{t("gallery-description")}</Typography>
             </Box>
             <Box className={classes.galleryContainer}>
                 <GridList cellHeight={160} className={classes.gridList} cols={3}>

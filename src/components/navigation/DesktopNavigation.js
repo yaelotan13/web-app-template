@@ -24,17 +24,34 @@ const useStyle = makeStyles((theme) => ({
         fontFamily: theme.typography.h6.fontFamily,
         fontWeight: theme.typography.h2.fontWeight,
     },
+    itemRightToLeft: {
+        fontFamily: "'Amatic SC', sans-serif",
+        fontSize: 22,
+        fontWeight: 700
+    },
     highlightNavBar: {
         borderTop: '2px solid black',
         borderRadius: 0
     },
-    flagsContainer: {
-    }
 }));
 
 const DesktopNavigation = (props) => {
     const classes = useStyle();
     const { screens, setCurrentScreen, currnetScreen, rightToLeft } = props;
+
+    const getItemStyle = (index) => {
+        let style = [classes.navBarItem];
+
+        if (currnetScreen === `screen${index}`) {
+            style.push(classes.highlightNavBar);
+        }
+
+        if (rightToLeft) {
+            style.push(classes.itemRightToLeft)
+        }
+        console.log(style);
+        return style;
+    };
 
     return (
         <Hidden xsDown>
@@ -52,9 +69,7 @@ const DesktopNavigation = (props) => {
                                 duration={500} 
                                 onSetActive={() => {setCurrentScreen(`screen${index + 1}`)}}
                             >
-                                <Button 
-                                    className={currnetScreen === `screen${index + 1}` ? [classes.navBarItem, classes.highlightNavBar].join(' ') : classes.navBarItem}
-                                >
+                                <Button className={getItemStyle(index + 1)}>
                                     {screen}
                                 </Button>
                             </Link>

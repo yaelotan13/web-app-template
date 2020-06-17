@@ -43,7 +43,10 @@ const useStyle = makeStyles((theme) => ({
         fontWeight: theme.typography.h5.fontWeight,
     },
     drawerItemTextRightToLeft: {
-        marginRight: 12
+        marginRight: 12,
+        fontFamily: "'Amatic SC', sans-serif",
+        fontSize: 22,
+        fontWeight: 700
     }
 }));
 
@@ -98,7 +101,7 @@ const MobileNavigation = (props) => {
                             >
                                 <ListItem className={getDrawerItemStyle(index + 1)}>
                                     <ListItemIcon>{getDrawerIcon(index)}</ListItemIcon>
-                                    <ListItemText className={rightToLeft ? [classes.drawerItemText, classes.drawerItemTextRightToLeft] : classes.drawerItemText}>{screen}</ListItemText>
+                                    <ListItemText className={rightToLeft ? [classes.drawerItemText, classes.drawerItemTextRightToLeft].join(' ') : classes.drawerItemText}>{screen}</ListItemText>
                                 </ListItem>
                             </Link>
                         )}

@@ -1,6 +1,6 @@
 import tuli1 from '../assets/images/events/table2.jpg';
-import tuli2 from '../assets/images/events/kids2.jpeg';
-import tuli3 from '../assets/images/events/tour-crowd.jpeg';
+import tuli2 from '../assets/images/events/kids3.jpeg';
+import tuli3 from '../assets/images/events/volley-crowd.jpeg';
 
 import img1 from '../assets/images/events/kids1.jpeg';
 import img2 from '../assets/images/events/people.jpg';

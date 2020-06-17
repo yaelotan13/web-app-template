@@ -28,8 +28,8 @@ const useStyle = makeStyles(theme => ({
         height: '70vh',
         width: '100vw',
         [theme.breakpoints.down('xs')]: {
-            height: '40vh',
-            marginTop: '-2vh'
+            height: '70vh',
+            marginTop: '-2vh',
         }
     },
     image: {
@@ -39,8 +39,9 @@ const useStyle = makeStyles(theme => ({
         backgroundSize: 'cover',
         opacity: 0.8,
         [theme.breakpoints.down('xs')]: {
-            backgroundSize: 'contain',
-            backgroundRepeat: 'no-repeat'
+            backgroundSize: 'cover',
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center'
         }
     }
 }));
@@ -51,11 +52,11 @@ const Images = (props) => {
 
     return (
         <Box className={classes.container}>
-            <Content 
+            {/* <Content 
                 rightToLeft={i18n.language === 'Hebrew'}
-                header={t("Tuli's-event")} 
-                subHeader={t("Tuli's-about")} 
-            />
+                header={t("main-title")} 
+                subHeader={t("sub-title")} 
+            /> */}
             <Carousel interval="4000" pause="false" className={classes.carousel}>
                 {getHomeCarouselImages().map(image => 
                     <Carousel.Item className={classes.imageContainer} key={image.id}>
