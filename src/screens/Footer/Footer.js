@@ -21,6 +21,11 @@ const useStyle = makeStyles(theme => ({
     content: {
         color: '#525252'
     },
+    rightToLeftContent: {
+        fontFamily: "'Amatic SC', cursive",
+        fontSize: 20,
+        fontWeight: 700
+    },
     flower: {
         backgroundImage: `url(${flower})`,
         backgroundSize: 'contain',
@@ -36,10 +41,12 @@ const useStyle = makeStyles(theme => ({
 const Footer = (props) => {
     const classes = useStyle();
     const [t, i18n] = useTranslation();
-
+    
+    const rightToLeft = () => i18n.language === "Hebrew";
+    
     return (
-        <Box className={i18n.language === "Hebrew" ? [classes.footer, classes.rightToLeft].join(' ') : classes.footer}>
-            <Typography variant="h6" className={classes.content}>{t("built-by-yael")}</Typography>
+        <Box className={rightToLeft ? [classes.footer, classes.rightToLeft].join(' ') : classes.footer}>
+            <Typography variant="h6" className={rightToLeft ? [classes.content, classes.rightToLeftContent].join(' ') : classes.content}>{t("built-by-yael")}</Typography>
             <Box className={classes.flower} />
         </Box>
     )

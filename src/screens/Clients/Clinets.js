@@ -15,21 +15,30 @@ const useStyle = makeStyles(theme => ({
             fontSize: 32
         }
     },
+    rightToLeftMainHeader: {
+        fontFamily: "'Amatic SC', cursive"
+    },
     subHeader: {
         textAlign: 'center',
         marginTop: '2vh',
-    }
+    },
+    subHeaderRightToLeft: {
+        fontFamily: "'Alef', sans-serif",
+        marginTop: 4
+    },
 }));
 
 const Clients = (props) => {
     const classes = useStyle();
     const [t, i18n] = useTranslation();
 
+    const rightToLeft = () => i18n.language === "Hebrew";
+
     return (
         <Box>
             <Box className={classes.headerContainer}>
-                <Typography variant="h1" className={classes.mainHeader}>{t("clients")}</Typography>
-                <Typography variant="subtitle1" className={classes.subHeader}>{t("clients-description")}</Typography>
+                <Typography variant="h1" className={rightToLeft ? [classes.mainHeader, classes.rightToLeftMainHeader].join(' ') : classes.mainHeader}>{t("clients")}</Typography>
+                <Typography variant="subtitle1" className={rightToLeft ? [classes.subHeader, classes.subHeaderRightToLeft].join(' ') : classes.subHeader}>{t("clients-description")}</Typography>
             </Box>
             <ClientList />
         </Box>

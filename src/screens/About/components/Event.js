@@ -15,16 +15,26 @@ const useStyle = makeStyles(theme => ({
     img: {
         height: 180
     },
+    rightToLeftHeader: {
+        fontFamily: "'Alef', sans-serif",
+        fontSize: 22
+    },
     description: {
         marginTop: '1vh',
         textAlign: 'center',
         fontSize: 14
-    }
+    },
+    descriptionRightToLeft: {
+        fontFamily: "'Alef', sans-serif",
+        textAlign: 'right',
+        marginTop: '1vw',
+        fontSize: 16
+    },
 }));
 
 const Event = (props) => {
     const classes = useStyle();
-    const { img, alt, title, description, opposite } = props;
+    const { img, alt, title, description, isRightToLeft } = props;
 
     return (
         <Card className={classes.container}>
@@ -34,8 +44,20 @@ const Event = (props) => {
                 alt={alt}
             />
             <CardContent>
-                <Typography variant="h5" component="h2" align="center">{title}</Typography>
-                <Typography variant="body2" color="textSecondary" component="p" className={classes.description}>
+                <Typography 
+                    variant="h5" 
+                    component="h2" 
+                    align="center" 
+                    className={isRightToLeft ? classes.rightToLeftHeader : null}
+                >
+                    {title}
+                </Typography>
+                <Typography 
+                    variant="body2" 
+                    color="textSecondary" 
+                    component="p" 
+                    className={isRightToLeft ? [classes.descriptionRightToLeft] : classes.description}
+                >
                     {description}
                 </Typography>
             </CardContent>

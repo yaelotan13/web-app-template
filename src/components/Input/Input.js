@@ -11,6 +11,9 @@ const useStyle = makeStyles(theme => ({
             width: '80vw',
         }
     },
+    rightToLeft: {
+        textAlign: 'right'
+    },
     textArea: {
         border: '1px solid #C4C3C3',
         padding: '1vh 1vw',
@@ -27,7 +30,7 @@ const useStyle = makeStyles(theme => ({
 
 const Input = (props) => {
     const classes = useStyle();
-    const { textArea, type, label, value, handleChange, name, error, placeholder } = props;
+    const { textArea, type, label, value, handleChange, name, error, placeholder, rightToLeft } = props;
 
     return (
         <>

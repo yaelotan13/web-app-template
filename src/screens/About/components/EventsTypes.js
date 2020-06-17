@@ -24,7 +24,7 @@ const EventTypes = (props) => {
     const classes = useStyle();
     const [t, i18n] = useTranslation();
     const events = getEvents(t);
-
+    const { isRightToLeft } = props;
     return (
         <Box className={classes.container}>
             {events.map(event => 
@@ -34,6 +34,7 @@ const EventTypes = (props) => {
                     alt={event.alt} 
                     title={event.title} 
                     description={event.description} 
+                    isRightToLeft={isRightToLeft}
                 />
             )}
         </Box>
