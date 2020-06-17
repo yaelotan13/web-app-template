@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/styles';
 const useStyle = makeStyles((theme) => ({
     appBar: {
         boxShadow: 'none',
-        marginTop: '22vh'
+        marginTop: '20vh'
     },
     navBar: {
         justifyContent: 'center',

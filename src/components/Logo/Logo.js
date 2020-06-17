@@ -2,7 +2,7 @@ import React from 'react';
 import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import logo from '../../assets/icons/logo.png';
+import logo from '../../assets/icons/tulis-logo.jpg';
 
 const useStyle = makeStyles(theme => ({
     container: {

@@ -10,7 +10,7 @@ const eventsData = [
         description: "A paragraph not too long saying that Tuli can orgenize many types of events like city events, sport events, compenies events and also mentioning that these events are the best"
     },
     {
-        id: 0, 
+        id: 1, 
         img: privateEvent,
         alt: "",
         title: "Private Events",

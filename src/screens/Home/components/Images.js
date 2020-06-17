@@ -49,7 +49,7 @@ const Images = (props) => {
 
     return (
         <Box className={classes.container}>
-            <Content header="Tulis Event" subHeader="Planning your event in the most personal, thoughtful and beautiful way" />
+            <Content header="Tuli's Event" subHeader="Planning your event in the most personal, thoughtful and beautiful way" />
             <Carousel interval="4000" pause="false" className={classes.carousel}>
                 {getHomeCarouselImages().map(image => 
                     <Carousel.Item className={classes.imageContainer} key={image.id}>

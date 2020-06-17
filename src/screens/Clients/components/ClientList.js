@@ -11,7 +11,7 @@ const useStyle = makeStyles(theme => ({
         flexWrap: 'wrap',
         width: '80vw',
         marginLeft: '10vw',
-        justifyContent: 'space-between',
+        justifyContent: 'space-around',
         marginTop: '8vh',
         [theme.breakpoints.down('sm')]: {
             width: '90vw',
