@@ -43,7 +43,7 @@ const useStyle = makeStyles(theme => ({
         overflow: 'hidden',
       },
       gridList: {
-        width: '70vw',
+        width: '80vw',
         height: '100vh',
         [theme.breakpoints.down('sm')]: {
             width: '95vw',
