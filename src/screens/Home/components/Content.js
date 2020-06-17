@@ -36,8 +36,8 @@ const useStyle = makeStyles(theme => ({
 
 const Content = (props) => {
     const classes = useStyle();
-    const { header, subHeader } = props;
-    
+    const { header, subHeader, rightToLeft } = props;
+
     return (
         <>
             <Hidden smUp>

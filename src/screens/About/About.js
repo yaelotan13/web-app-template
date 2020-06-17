@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+import { useTranslation } from 'react-i18next';
 
 import { EventTypes } from './components';
 
@@ -70,19 +71,19 @@ const useStyle = makeStyles(theme => ({
 
 const About = (props) => {
     const classes = useStyle();
+    const [t, i18n] = useTranslation();
+    const isRightToLeft = () => i18n.language === "Hebrew";
 
     return (
         <Box className={classes.container}>
             <Box className={classes.coloredBox}>
-                <Typography variant="h1" className={classes.header}>About Me</Typography>
-                <Typography variant="subtitle1" className={classes.content}>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </Typography>
+                <Typography variant="h1" className={classes.header}>{t("about-me-title")}</Typography>
+                <Typography variant="subtitle1" className={classes.content}>{t("about-me-body")}</Typography>
             </Box>
             <Box className={classes.sideColoredBox} />
             <Box className={classes.eventsContainer}>
-                <Typography variant="h1" className={classes.title}>Event Types</Typography>
-                <Typography variant="subtitle1" color="textSecondary" className={classes.eventsSubTitle}>My events are tailored maid to suit your needs, whether it's a business event or a personal event</Typography>
+                <Typography variant="h1" className={classes.title}>{t("event-types-title")}</Typography>
+                <Typography variant="subtitle1" color="textSecondary" className={classes.eventsSubTitle}>{t("event-types-description")}</Typography>
                 <EventTypes />
             </Box>
         </Box>

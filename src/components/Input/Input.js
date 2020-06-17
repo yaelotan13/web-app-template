@@ -27,7 +27,7 @@ const useStyle = makeStyles(theme => ({
 
 const Input = (props) => {
     const classes = useStyle();
-    const { textArea, type, label, value, handleChange, name, error } = props;
+    const { textArea, type, label, value, handleChange, name, error, placeholder } = props;
 
     return (
         <>
@@ -35,7 +35,7 @@ const Input = (props) => {
                 <TextareaAutosize 
                     rows="5" 
                     className={error ? [classes.input, classes.textArea, classes.error].join(' '): [classes.input, classes.textArea].join(' ')} 
-                    placeholder="Type your message here..."
+                    placeholder={placeholder}
                     value={value}
                     name="content"
                     onChange={handleChange}

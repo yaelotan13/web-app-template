@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Box, GridList, GridListTile, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+import { useTranslation } from 'react-i18next';
 
 import { getGalleryImages } from '../../data/images';
 import { LargeImage } from './components';
@@ -51,6 +52,7 @@ const Gallery = (props) => {
     const images = getGalleryImages();
     const [open, setOpen] = useState(false);
     const [curImage, setCurImage] = useState(null);
+    const [t, i18n] = useTranslation();
 
     const handleImageClicked = (image) => {
         setCurImage(image);
@@ -65,8 +67,8 @@ const Gallery = (props) => {
         <Box className={classes.container}>
             <LargeImage open={open} handleClose={handleClose} img={curImage} />
             <Box className={classes.content}>
-                <Typography variant="h1" className={classes.header}>Gallery</Typography>
-                <Typography variant="h6" className={classes.subHeader}>Desctiption about the images that are below, saying nice things</Typography>
+                <Typography variant="h1" className={classes.header}>{t("gallery")}</Typography>
+                <Typography variant="h6" className={classes.subHeader}>{t("gallery-description")}</Typography>
             </Box>
             <Box className={classes.galleryContainer}>
                 <GridList cellHeight={160} className={classes.gridList} cols={3}>
