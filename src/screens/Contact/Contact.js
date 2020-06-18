@@ -231,10 +231,10 @@ const Contact = (props) => {
                 </Box>
                 <Box className={classes.form}>
                     <Typography variant="subtitle1" className={rightToLeft ? [classes.formTitle, classes.formTitleRightToLeft].join(' ') : classes.formTitle}>{t("leave-a-message")}</Typography>
-                    <Input label={t("full-name")} type="text" name="fullName" value={inputs.fullName.value} handleChange={handleChange} error={inputs.fullName.hasError} rightToLeft />
-                    <Input label={t("email")} type="email" name="email" value={inputs.email.value} handleChange={handleChange} error={inputs.email.hasError} rightToLeft />
-                    <Input label={t("phone-number")} type="text" name="phoneNumber" value={inputs.phoneNumber.value} handleChange={handleChange} error={inputs.phoneNumber.hasError} rightToLeft />
-                    <Input textArea placeholder={t("type-your-message-here")} name="content" value={inputs.content.value} handleChange={handleChange} error={inputs.content.hasError} rightToLeft />
+                    <Input label={t("full-name")} type="text" name="fullName" value={inputs.fullName.value} handleChange={handleChange} error={inputs.fullName.hasError} rightToLeft={i18n.language === "Hebrew" } /> 
+                    <Input label={t("email")} type="email" name="email" value={inputs.email.value} handleChange={handleChange} error={inputs.email.hasError} rightToLeft={i18n.language === "Hebrew" } />
+                    <Input label={t("phone-number")} type="text" name="phoneNumber" value={inputs.phoneNumber.value} handleChange={handleChange} error={inputs.phoneNumber.hasError} rightToLeft={i18n.language === "Hebrew" } />
+                    <Input textArea placeholder={t("type-your-message-here")} name="content" value={inputs.content.value} handleChange={handleChange} error={inputs.content.hasError} rightToLeft ={i18n.language === "Hebrew"} />
                     <Button className={classes.button} onClick={submit}>
                         {sending ? <CircularProgress size="30" /> : t("send")}
                     </Button>
