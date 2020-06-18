@@ -49,7 +49,7 @@ const DesktopNavigation = (props) => {
         if (rightToLeft) {
             style.push(classes.itemRightToLeft)
         }
-        console.log(style);
+
         return style;
     };
 

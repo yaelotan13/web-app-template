@@ -21,14 +21,13 @@ const useStyle = makeStyles(theme => ({
     },
     description: {
         marginTop: '1vh',
-        textAlign: 'center',
         fontSize: 14
     },
     descriptionRightToLeft: {
         fontFamily: "'Alef', sans-serif",
-        textAlign: 'right',
         marginTop: '1vw',
-        fontSize: 16
+        fontSize: 16,
+        textAlign: 'center',
     },
 }));
 

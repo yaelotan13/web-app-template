@@ -4,6 +4,7 @@ import palette from './palette';
 import typography from './typography';
 
 const theme = createMuiTheme({
+  direction: 'rtl',
   palette,
   typography,
   zIndex: {
