@@ -3,6 +3,7 @@ import { Box, Typography, Button, CircularProgress } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import axios from 'axios';
 import { useTranslation } from 'react-i18next';
+import { Checkmark } from 'react-checkmark'
 
 import phone from '../../assets/icons/phone.png';
 import email from '../../assets/icons/email.png';
@@ -99,22 +100,41 @@ const useStyle = makeStyles(theme => ({
         }
     },
     button: {
-        backgroundColor: '#F3FF40',
+        backgroundColor: '#EB9FC0',
         padding: '1vh 3vw',
         width: '15vw',
+        display: 'felx',
+        alignItems: 'center',
+        justifyContent: 'center',
         [theme.breakpoints.down('sm')]: {
             width: '40vw',
         }
     },
+    spinner: {
+        height: 20,
+        width: 20
+    },
     error: {
         color: 'red'
-    }
+    },
+    messageSentSuccessContainer: {
+        marginTop: '2vh',
+        display: 'flex',
+        alignItems: 'center', 
+    },
+    messageSentSuccess: {
+        margin: '0 1vw',
+    },
+    rightToLeftMessageSuccess: {
+        flexDirection: 'row-reverse'
+    },
 }));
 
 const Contact = (props) => {
     const classes = useStyle();
     const [t, i18n] = useTranslation();
     const [sending, setSending] = useState(false);
+    const [messageSentSuccessfully, setMessageSentSuccessfully] = useState(null);
     const [serverError, setServerError] = useState(null);
     const [hasInputsError, setHasInputsError] = useState(false);
     const [inputs, setInputs] = useState({
@@ -195,14 +215,16 @@ const Contact = (props) => {
             setSending(true);
             try {
                 const response = await axios.post('/send', { 
-                    fullName: inputs.fullName.value,
                     email: inputs.email.value,
-                    content: inputs.content.value
+                    content: inputs.content.value,
+                    tel: inputs.phoneNumber.value, 
+                    name: inputs.fullName.value
                 });
                 
                 console.log(response);
                 response.status === 200 ? setServerError(false) : setServerError(true);
                 setSending(false);
+                setMessageSentSuccessfully(true)
                 resetInput();
             } catch (error) {
                 setServerError(true);
@@ -236,9 +258,15 @@ const Contact = (props) => {
                     <Input label={t("phone-number")} type="text" name="phoneNumber" value={inputs.phoneNumber.value} handleChange={handleChange} error={inputs.phoneNumber.hasError} rightToLeft={i18n.language === "Hebrew" } />
                     <Input textArea placeholder={t("type-your-message-here")} name="content" value={inputs.content.value} handleChange={handleChange} error={inputs.content.hasError} rightToLeft ={i18n.language === "Hebrew"} />
                     <Button className={classes.button} onClick={submit}>
-                        {sending ? <CircularProgress size="30" /> : t("send")}
+                        {sending ? <CircularProgress className={classes.spinner} size="30" /> : <Typography>{t("send")}</Typography>}
                     </Button>
                     {hasInputsError && <Typography variant="subtitle1" className={classes.error}>{t("fill-all-fields-error")}</Typography>}
+                    {messageSentSuccessfully && 
+                    <Box className={rightToLeft ? [classes.messageSentSuccessContainer, classes.rightToLeftMessageSuccess].join(' ') : classes.messageSentSuccessContainer}>
+                        <Checkmark size='medium' />
+                        <Typography className={classes.messageSentSuccess}>{t("message-sent-success")}</Typography>
+                    </Box>
+                    }
                 </Box>
             </Box>
         </Box>

@@ -21,7 +21,7 @@ const useStyle = makeStyles(theme => ({
         fontFamily: "'Amatic SC', cursive"
     },
     subHeader: {
-        marginTop: '3vh',
+        marginTop: '5vh',
         textAlign: 'center',
         [theme.breakpoints.down('sm')]: {
             fontSize: 16,
@@ -29,7 +29,7 @@ const useStyle = makeStyles(theme => ({
     },
     subHeaderRightToLeft: {
         fontFamily: "'Alef', sans-serif",
-        marginTop: 4
+        marginTop: 2
     },
     galleryContainer: {
         display: 'flex',

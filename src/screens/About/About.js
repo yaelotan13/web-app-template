@@ -66,7 +66,7 @@ const useStyle = makeStyles(theme => ({
         left: '67vw',
         zIndex: 2,
         [theme.breakpoints.down('sm')]: {
-            height: '60vh',
+            height: '40vh',
             left: '90vw',
         },
         [theme.breakpoints.down('xs')]: {
