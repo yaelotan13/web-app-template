@@ -27,5 +27,6 @@
     "nav-gallery": "GALLERY",
     "nav-clients": "CLIENTS",
     "nav-contact-me": "CONTACT ME",
-    "message-sent-success": "Your message has been sent"
+    "message-sent-success": "Your message has been sent",
+    "message-sent-error": "Sorry, something went wrong.."
 }

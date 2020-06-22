@@ -27,5 +27,6 @@
     "nav-gallery": "גלריה",
     "nav-clients": "לקוחות",
     "nav-contact-me": "צור קשר",
-    "message-sent-success": "ההודעה נשלחה בהצלחה"
+    "message-sent-success": "ההודעה נשלחה בהצלחה",
+    "message-sent-error": "אופס, משהו השתבש"
 }

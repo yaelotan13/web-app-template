@@ -129,6 +129,10 @@ const useStyle = makeStyles(theme => ({
     rightToLeftMessageSuccess: {
         flexDirection: 'row-reverse'
     },
+    messageError: {
+        marginTop: '2vh',
+        textAlign: 'center'
+    }
 }));
 
 const Contact = (props) => {
@@ -140,11 +144,6 @@ const Contact = (props) => {
     const [hasInputsError, setHasInputsError] = useState(false);
     const [inputs, setInputs] = useState({
         fullName: {
-            value: '',
-            touched: false,
-            hasError: false,
-        },
-        email: {
             value: '',
             touched: false,
             hasError: false,
@@ -216,7 +215,6 @@ const Contact = (props) => {
             setSending(true);
             try {
                 const response = await axios.post('https://glacial-plains-11245.herokuapp.com/send', { 
-                    email: inputs.email.value,
                     content: inputs.content.value,
                     tel: inputs.phoneNumber.value, 
                     name: inputs.fullName.value
@@ -229,6 +227,7 @@ const Contact = (props) => {
                 resetInput();
             } catch (error) {
                 setServerError(true);
+                setSending(false);
             }
         }
     };
@@ -255,7 +254,6 @@ const Contact = (props) => {
                 <Box className={classes.form}>
                     <Typography variant="subtitle1" className={rightToLeft ? [classes.formTitle, classes.formTitleRightToLeft].join(' ') : classes.formTitle}>{t("leave-a-message")}</Typography>
                     <Input label={t("full-name")} type="text" name="fullName" value={inputs.fullName.value} handleChange={handleChange} error={inputs.fullName.hasError} rightToLeft={i18n.language === "Hebrew" } /> 
-                    <Input label={t("email")} type="email" name="email" value={inputs.email.value} handleChange={handleChange} error={inputs.email.hasError} rightToLeft={i18n.language === "Hebrew" } />
                     <Input label={t("phone-number")} type="text" name="phoneNumber" value={inputs.phoneNumber.value} handleChange={handleChange} error={inputs.phoneNumber.hasError} rightToLeft={i18n.language === "Hebrew" } />
                     <Input textArea placeholder={t("type-your-message-here")} name="content" value={inputs.content.value} handleChange={handleChange} error={inputs.content.hasError} rightToLeft ={i18n.language === "Hebrew"} />
                     <Button className={classes.button} onClick={submit}>
@@ -268,6 +266,7 @@ const Contact = (props) => {
                         <Typography className={classes.messageSentSuccess}>{t("message-sent-success")}</Typography>
                     </Box>
                     }
+                    {serverError && <Typography className={classes.messageError} variant="subtitle1">{t('message-sent-error')}</Typography>}
                 </Box>
             </Box>
         </Box>
