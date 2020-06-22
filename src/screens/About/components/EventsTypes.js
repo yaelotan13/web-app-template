@@ -22,7 +22,7 @@ const useStyle = makeStyles(theme => ({
 
 const EventTypes = (props) => {
     const classes = useStyle();
-    const [t, i18n] = useTranslation();
+    const [ t ] = useTranslation();
     const events = getEvents(t);
     const { isRightToLeft } = props;
     return (

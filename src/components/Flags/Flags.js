@@ -26,10 +26,11 @@ const useStyle = makeStyles((theme) => ({
 
 const Flags = (props) => {
     const classes = useStyle();
-    const { mobile } = props;
+    const { mobile, handleClose } = props;
 
     const handleFlagClicked = (lan) => {
         i18next.changeLanguage(lan);
+        handleClose();
     };
 
     return (

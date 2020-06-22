@@ -19,12 +19,13 @@ const useStyle = makeStyles(theme => ({
         display: 'felx',
         flexDirection: 'column',
         alignItems: 'space-around',
-        marginTop: '-12vh',
+        justifyContent: 'center',
+        marginTop: '-15vh',
         borderBottom: '1px solid #E6E6E6',
         zIndex: 10,
         backgroundColor: 'white',
         [theme.breakpoints.down('xs')]: {
-            marginTop: '-15vh', 
+            marginTop: '-10vh', 
         }
     },
 }));

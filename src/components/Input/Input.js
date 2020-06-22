@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextField, TextareaAutosize, Box } from '@material-ui/core';
+import { TextField, TextareaAutosize } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
 import { RTL } from '../../hoc';
@@ -16,6 +16,13 @@ const useStyle = makeStyles(theme => ({
     textArea: {
         border: '1px solid #C4C3C3',
         padding: '1vh 1vw',
+        fontSize: 14,
+        [theme.breakpoints.down('sm')]: {
+            paddingRight: '3vw'
+        },
+        '&::placeholder': {
+            color: '#546e7a',
+        },
         '&:focus': {
             outline: 'none !important',
             border: '1px solid black',
@@ -23,7 +30,11 @@ const useStyle = makeStyles(theme => ({
         }
     },
     leftToRight: {
-        textAlign: 'left'
+        textAlign: 'left',
+        paddingLeft: '3vw',
+        '&::placeholder': {
+            color: '#A5A7AC',
+        },
     },
     error: {
         border: '1px solid red',
@@ -49,8 +60,8 @@ const Input = (props) => {
     };
 
     return (
-        <div dir="rtl">
-             <RTL>
+        <div dir={rightToLeft ? "rtl" : "ltr"}>
+             <RTL> 
                 {textArea ?
                 <TextareaAutosize 
                     rows="5" 

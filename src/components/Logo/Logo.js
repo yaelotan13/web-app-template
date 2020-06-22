@@ -8,7 +8,7 @@ const useStyle = makeStyles(theme => ({
     container: {
         marginBottom: '10vh',
         width: '100vw',
-        height: '18vh',
+        height: '25vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -18,15 +18,15 @@ const useStyle = makeStyles(theme => ({
     },
     logo: {
         marginTop: '4vh',
-        height: '100%',
-        width: '35vw',
+        height: '25vh',
+        width: '65vw',
         backgroundImage: `url(${logo})`,
         backgroundSize: 'contain',
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
         [theme.breakpoints.down('xs')]: {
-            marginTop: '25vh', 
-            width: '40vw',
+            marginTop: '20vh', 
+            width: '50vw',
         }
     }
 }));

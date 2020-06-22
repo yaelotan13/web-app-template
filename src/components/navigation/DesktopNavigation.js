@@ -8,7 +8,7 @@ import Flags from '../Flags';
 const useStyle = makeStyles((theme) => ({
     appBar: {
         boxShadow: 'none',
-        marginTop: '20vh',
+        marginTop: '24vh',
         position: 'relative',
     },
     navBar: {
@@ -57,7 +57,7 @@ const DesktopNavigation = (props) => {
         <Hidden xsDown>
             <Box>
                 <AppBar color="transparent" className={classes.appBar}>
-                    <Toolbar className={rightToLeft? [classes.navBar, classes.rightToLeft] : classes.navBar}>
+                    <Toolbar className={rightToLeft ? [classes.navBar, classes.rightToLeft].join(' ') : classes.navBar}>
                         {screens.map((screen, index) => 
                             <Link 
                                 key={screen.concat(index)} 

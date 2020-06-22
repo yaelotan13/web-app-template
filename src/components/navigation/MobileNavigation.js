@@ -85,7 +85,7 @@ const MobileNavigation = (props) => {
                 <Drawer 
                     open={openDrawer} 
                     onClose={() => setOpenDrawer(false)}
-                    anchor={rightToLeft ? 'right' : 'left'}
+                    anchor={rightToLeft ? 'left' : 'right'}
                 >
                     <List className={classes.drawerList}>
                         {screens.map((screen, index) => 
@@ -99,14 +99,14 @@ const MobileNavigation = (props) => {
                                 duration={500}
                                 onSetActive={() => {setCurrentScreen(`screen${index + 1}`)}}
                             >
-                                <ListItem className={getDrawerItemStyle(index + 1)}>
+                                <ListItem className={getDrawerItemStyle(index + 1)} onClick={() => setOpenDrawer(false)}>
                                     <ListItemIcon>{getDrawerIcon(index)}</ListItemIcon>
                                     <ListItemText className={rightToLeft ? [classes.drawerItemText, classes.drawerItemTextRightToLeft].join(' ') : classes.drawerItemText}>{screen}</ListItemText>
                                 </ListItem>
                             </Link>
                         )}
                     </List>
-                    <Flags mobile rightToLeft />
+                    <Flags mobile rightToLeft handleClose={() => setOpenDrawer(false)} />
                 </Drawer>
             </Fragment>
         </Hidden>
