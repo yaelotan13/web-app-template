@@ -26,8 +26,9 @@ const useStyle = makeStyles(theme => ({
         width: '4vw',
         height: '4vh',
         position: 'absolute',
-        right: -8,
+        right: -1,
         top: 2,
+        zIndex: 9,
         cursor: 'pointer',
         [theme.breakpoints.down('xs')]: {
             right: 8,
@@ -59,7 +60,8 @@ const useStyle = makeStyles(theme => ({
     arrowIcon: {
         width: 40,
         height: 40,
-        cursor: 'pointer'
+        cursor: 'pointer',
+        color: 'white'
     }
 }));
 
