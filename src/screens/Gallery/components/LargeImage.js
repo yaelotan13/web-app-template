@@ -2,6 +2,8 @@ import React from 'react';
 import { Box, Modal, Backdrop, Fade } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import CloseIcon from '@material-ui/icons/Close';
+import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
+import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
 
 const useStyle = makeStyles(theme => ({
     container: {
@@ -33,8 +35,8 @@ const useStyle = makeStyles(theme => ({
         }
     },
     img: {
-        width: '50vw',
-        height: '50vh',
+        width: '60vw',
+        height: '60vh',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
@@ -43,12 +45,27 @@ const useStyle = makeStyles(theme => ({
             width: '90vw',
             height: '60vh'
         }
+    },
+    arrowsContainer: {
+        width: '100%',
+        height: '60vh',
+        display: 'flex',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        position: 'absolute',
+        zIndex: 6,
+        left: 0
+    },
+    arrowIcon: {
+        width: 40,
+        height: 40,
+        cursor: 'pointer'
     }
 }));
 
 const LargeImage = (props) => {
     const classes = useStyle();
-    const { img, open, handleClose } = props;
+    const { img, open, handleClose, getNextImage, getPrevImage } = props;
 
     return (
         <Modal
@@ -65,6 +82,10 @@ const LargeImage = (props) => {
                 <div className={classes.paper}>
                     <CloseIcon className={classes.closeIcon} onClick={handleClose} />
                     <Box className={classes.img} style={{ backgroundImage: `url(${img})`}} />
+                    <Box className={classes.arrowsContainer}>
+                        <ArrowBackIosIcon className={classes.arrowIcon} onClick={getPrevImage} />
+                        <ArrowForwardIosIcon className={classes.arrowIcon} onClick={getNextImage} />
+                    </Box>
                 </div>
             </Fade>
         </Modal>
