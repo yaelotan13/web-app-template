@@ -1,6 +1,7 @@
 import React from 'react';
-import { Card, CardContent, CardMedia, Typography, Box } from '@material-ui/core';
+import { Card, CardContent, CardMedia, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 const useStyle = makeStyles(theme => ({
     container: {
@@ -21,7 +22,8 @@ const useStyle = makeStyles(theme => ({
     },
     description: {
         marginTop: '1vh',
-        fontSize: 14
+        fontSize: 14,
+        color: '#8D8D8D'
     },
     descriptionRightToLeft: {
         fontFamily: "'Alef', sans-serif",
@@ -36,31 +38,38 @@ const Event = (props) => {
     const { img, alt, title, description, isRightToLeft } = props;
 
     return (
-        <Card className={classes.container}>
-            <CardMedia
-                className={classes.img}
-                image={img}
-                alt={alt}
-            />
-            <CardContent>
-                <Typography 
-                    variant="h5" 
-                    component="h2" 
-                    align="center" 
-                    className={isRightToLeft ? classes.rightToLeftHeader : null}
-                >
-                    {title}
-                </Typography>
-                <Typography 
-                    variant="body2" 
-                    color="textSecondary" 
-                    component="p" 
-                    className={isRightToLeft ? [classes.descriptionRightToLeft] : classes.description}
-                >
-                    {description}
-                </Typography>
-            </CardContent>
-        </Card>
+        <ScrollAnimation 
+            animateIn='fadeInUp'
+            delay={600}
+            initiallyVisible={false}
+            animateOnce={true}
+        >
+            <Card className={classes.container}>
+                <CardMedia
+                    className={classes.img}
+                    image={img}
+                    alt={alt}
+                />
+                <CardContent>
+                    <Typography 
+                        variant="h5" 
+                        component="h2" 
+                        align="center" 
+                        className={isRightToLeft ? classes.rightToLeftHeader : null}
+                    >
+                        {title}
+                    </Typography>
+                    <Typography 
+                        variant="body2" 
+                        color="textSecondary" 
+                        component="p" 
+                        className={isRightToLeft ? [classes.descriptionRightToLeft] : classes.description}
+                    >
+                        {description}
+                    </Typography>
+                </CardContent>
+            </Card>
+        </ScrollAnimation>
     )
 };
 

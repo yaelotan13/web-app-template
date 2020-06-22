@@ -2,10 +2,8 @@ import React from 'react';
 import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import Carousel from 'react-bootstrap/Carousel';
-import { useTranslation } from 'react-i18next';
 
 import { getHomeCarouselImages } from '../../../data/images';
-import Content from './Content';
 
 const useStyle = makeStyles(theme => ({
     container: {
@@ -19,9 +17,9 @@ const useStyle = makeStyles(theme => ({
         zIndex: 8,
         width: '100%',
         display: 'flex',
-        paddingTop: '16vh',
+        paddingTop: '20vh',
         [theme.breakpoints.down('xs')]: {
-            paddingTop: 0,
+            paddingTop: '0vh',
         }
     },
     imageContainer: {
@@ -29,7 +27,7 @@ const useStyle = makeStyles(theme => ({
         width: '100vw',
         [theme.breakpoints.down('xs')]: {
             height: '70vh',
-            marginTop: '-2vh',
+            marginTop: '20vh',
         }
     },
     image: {
@@ -48,15 +46,9 @@ const useStyle = makeStyles(theme => ({
 
 const Images = (props) => {
     const classes = useStyle();
-    const [t, i18n] = useTranslation();
 
     return (
         <Box className={classes.container}>
-            {/* <Content 
-                rightToLeft={i18n.language === 'Hebrew'}
-                header={t("main-title")} 
-                subHeader={t("sub-title")} 
-            /> */}
             <Carousel interval="4000" pause="false" className={classes.carousel}>
                 {getHomeCarouselImages().map(image => 
                     <Carousel.Item className={classes.imageContainer} key={image.id}>

@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
+import ScrollAnimation from 'react-animate-on-scroll';
 
 import { EventTypes } from './components';
 
@@ -48,6 +49,7 @@ const useStyle = makeStyles(theme => ({
     },
     content: {
         lineHeight: 2,
+        color: '#415158',
         [theme.breakpoints.down('xs')]: {
             lineHeight: 1.7,
         }
@@ -61,7 +63,7 @@ const useStyle = makeStyles(theme => ({
         marginTop: '10vh',
         width: '6vw',
         height: '45vh',
-        backgroundColor: '#EB9FC0',
+        backgroundColor: '#C15986',
         position: 'absolute',
         left: '67vw',
         zIndex: 2,
@@ -81,12 +83,13 @@ const useStyle = makeStyles(theme => ({
         margin: '5vh 0 1vh 0',
         textAlign: 'center',
         [theme.breakpoints.down('sm')]: {
-            fontSize: 32
+            fontSize: 40
         }
     },
     eventsSubTitle: {
         textAlign: 'center',
-        padding: '0 5vw'
+        padding: '0 5vw',
+        marginTop: '1vh',
     }
 }));
 
@@ -98,18 +101,25 @@ const About = (props) => {
 
     return (
         <Box className={classes.container}>
-            <Box className={classes.coloredBox}>
-                <Typography variant="h1" className={isRightToLeft ? [classes.header, classes.rightToLeftHeader].join(' ') : classes.header}>{t("about-me-title")}</Typography>
-                <Typography variant="h4" className={isRightToLeft ? [classes.subHeader, classes.subHeaderRightToLeft].join(' ') : classes.subHeader}>{t("sub-title")}</Typography>
-                <Typography variant="subtitle1" className={isRightToLeft ? [classes.content, classes.contentRightToLeft].join(' ') : classes.content}>{t("about-me-body")}</Typography>
-            </Box>
+            <ScrollAnimation 
+                animateIn='fadeInUp'
+                delay={800}
+                initiallyVisible={false}
+                animateOnce={true}
+            >
+                <Box className={classes.coloredBox}>
+                    <Typography variant="h1" className={isRightToLeft ? [classes.header, classes.rightToLeftHeader].join(' ') : classes.header}>{t("about-me-title")}</Typography>
+                    <Typography variant="h4" className={isRightToLeft ? [classes.subHeader, classes.subHeaderRightToLeft].join(' ') : classes.subHeader}>{t("sub-title")}</Typography>
+                    <Typography variant="subtitle1" className={isRightToLeft ? [classes.content, classes.contentRightToLeft].join(' ') : classes.content}>{t("about-me-body")}</Typography>
+                </Box>
+            </ScrollAnimation>
             <Box className={classes.sideColoredBox} />
             <Box className={classes.eventsContainer}>
                 <Typography variant="h1" className={isRightToLeft ? [classes.title, classes.rightToLeftHeader].join(' ') : classes.title}>{t("event-types-title")}</Typography>
                 <Typography variant="subtitle1" color="textSecondary" className={isRightToLeft ? [classes.eventsSubTitle, classes.contentRightToLeft].join(' ') : classes.eventsSubTitle}>{t("event-types-description")}</Typography>
                 <EventTypes isRightToLeft />
             </Box>
-        </Box>
+        </Box>   
     )
 };
 

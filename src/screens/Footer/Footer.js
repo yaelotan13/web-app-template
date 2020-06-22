@@ -23,7 +23,7 @@ const useStyle = makeStyles(theme => ({
     },
     rightToLeftContent: {
         fontFamily: "'Amatic SC', cursive",
-        fontSize: 20,
+        fontSize: 18,
         fontWeight: 700
     },
     flower: {

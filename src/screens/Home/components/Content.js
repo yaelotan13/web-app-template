@@ -36,7 +36,7 @@ const useStyle = makeStyles(theme => ({
 
 const Content = (props) => {
     const classes = useStyle();
-    const { header, subHeader, rightToLeft } = props;
+    const { header, subHeader } = props;
 
     return (
         <>

@@ -12,7 +12,7 @@ const useStyle = makeStyles(theme => ({
     mainHeader: {
         textAlign: 'center',
         [theme.breakpoints.down('sm')]: {
-            fontSize: 32
+            fontSize: 40
         }
     },
     rightToLeftMainHeader: {
@@ -20,11 +20,12 @@ const useStyle = makeStyles(theme => ({
     },
     subHeader: {
         textAlign: 'center',
-        marginTop: '2vh',
+        marginTop: '0',
+        color: '#546e7a',
     },
     subHeaderRightToLeft: {
         fontFamily: "'Alef', sans-serif",
-        marginTop: 4
+        marginTop: 0
     },
 }));
 

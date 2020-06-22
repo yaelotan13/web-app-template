@@ -38,7 +38,7 @@ const useStyle = makeStyles(theme => ({
         textAlign: 'center',
         marginBottom: '2vh',
         [theme.breakpoints.down('sm')]: {
-            fontSize: 32
+            fontSize: 40
         }
     },
     rightToLeftMainHeader: {
@@ -78,8 +78,8 @@ const useStyle = makeStyles(theme => ({
         backgroundImage: `url(${email})`,
     },
     formTitle: {
-        marginBottom: '3vh',
-        color: '#4B4B4B',
+        marginBottom: '2vh',
+        color: '#546e7a',
         [theme.breakpoints.down('xs')]: {
             fontSize: 16
         }
@@ -100,7 +100,8 @@ const useStyle = makeStyles(theme => ({
         }
     },
     button: {
-        backgroundColor: '#EB9FC0',
+        backgroundColor: '#C73C78',
+        color: 'white',
         padding: '1vh 3vw',
         width: '15vw',
         display: 'felx',

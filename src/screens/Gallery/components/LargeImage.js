@@ -11,10 +11,14 @@ const useStyle = makeStyles(theme => ({
     },
     paper: {
         backgroundColor: theme.palette.background.paper,
-        border: '2px solid #000',
         boxShadow: theme.shadows[5],
-        padding: theme.spacing(4),
-        position: 'relative'
+        position: 'relative',
+        display: 'flex',
+        justifyContent: 'center',
+        [theme.breakpoints.down('sm')]: {
+            width: '90vw',
+            height: '60vh'
+        }
     },
     closeIcon: {
         width: '4vw',
@@ -35,6 +39,10 @@ const useStyle = makeStyles(theme => ({
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
         outline: 'none',
+        [theme.breakpoints.down('sm')]: {
+            width: '90vw',
+            height: '60vh'
+        }
     }
 }));
 

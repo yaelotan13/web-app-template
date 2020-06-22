@@ -14,15 +14,16 @@ const useStyle = makeStyles(theme => ({
     header: {
         textAlign: 'center',
         [theme.breakpoints.down('sm')]: {
-            fontSize: 32,
+            fontSize: 40,
         }
     },
     rightToLeftHeader: {
         fontFamily: "'Amatic SC', cursive"
     },
     subHeader: {
-        marginTop: '5vh',
+        marginTop: '6vh',
         textAlign: 'center',
+        color: '#546e7a',
         [theme.breakpoints.down('sm')]: {
             fontSize: 16,
         }
@@ -47,6 +48,7 @@ const useStyle = makeStyles(theme => ({
         height: '100vh',
         [theme.breakpoints.down('sm')]: {
             width: '95vw',
+            height: '125vh',
         }
       },
       img: {

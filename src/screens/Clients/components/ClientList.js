@@ -12,7 +12,7 @@ const useStyle = makeStyles(theme => ({
         width: '80vw',
         marginLeft: '10vw',
         justifyContent: 'space-around',
-        marginTop: '8vh',
+        marginTop: '6vh',
         [theme.breakpoints.down('sm')]: {
             width: '90vw',
             marginLeft: '5vw'
