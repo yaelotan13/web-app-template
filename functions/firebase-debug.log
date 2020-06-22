@@ -1,0 +1,148 @@
+[debug] [2020-06-22T17:26:10.066Z] ----------------------------------------------------------------------
+[debug] [2020-06-22T17:26:10.068Z] Command:       /usr/local/bin/node /usr/local/bin/firebase serve --only hosting,functions
+[debug] [2020-06-22T17:26:10.068Z] CLI Version:   7.15.1
+[debug] [2020-06-22T17:26:10.068Z] Platform:      darwin
+[debug] [2020-06-22T17:26:10.068Z] Node Version:  v12.13.1
+[debug] [2020-06-22T17:26:10.069Z] Time:          Mon Jun 22 2020 20:26:10 GMT+0300 (Israel Daylight Time)
+[debug] [2020-06-22T17:26:10.069Z] ----------------------------------------------------------------------
+[debug] [2020-06-22T17:26:10.069Z] 
+[debug] [2020-06-22T17:26:10.085Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-06-22T17:26:10.085Z] > authorizing via signed-in user
+[debug] [2020-06-22T17:26:10.085Z] [iam] checking project tulis-event for permissions ["firebase.projects.get"]
+[debug] [2020-06-22T17:26:10.087Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/tulis-event:testIamPermissions  
+
+[debug] [2020-06-22T17:26:11.318Z] <<< HTTP RESPONSE 200
+[debug] [2020-06-22T17:26:11.320Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/tulis-event  
+ 
+[debug] [2020-06-22T17:26:11.724Z] <<< HTTP RESPONSE 200
+[debug] [2020-06-22T17:26:11.727Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/tulis-event/webApps/-/config  
+ 
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "12"
+[info] ✔  functions: functions emulator started at http://localhost:5001
+[debug] [2020-06-22T17:26:12.544Z] <<< HTTP RESPONSE 200
+[info] i  functions: Watching "/Users/yaellotan/Desktop/tulis-event/functions" for Cloud Functions...
+[debug] [2020-06-22T17:26:12.628Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-06-22T17:26:12.628Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-06-22T17:26:12.628Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-06-22T17:26:12.629Z] [worker-~diagnostic~-e60efeac-94cf-4be2-8f09-2726d147a8bd]: Assigning socketPath: /var/folders/0s/ggy_48wj4ks3n3z2_cmst44m0000gn/T/fire_emu_85569.sock
+[debug] [2020-06-22T17:26:12.630Z] [worker-~diagnostic~-e60efeac-94cf-4be2-8f09-2726d147a8bd]: BUSY
+[info] i  hosting: Serving hosting files from: build
+[info] ✔  hosting: Local server: http://localhost:5000
+[debug] [2020-06-22T17:26:13.008Z] [runtime-status] [85569] Functions runtime initialized. {"cwd":"/Users/yaellotan/Desktop/tulis-event/functions","node_version":"12.13.1"}
+[debug] [2020-06-22T17:26:13.008Z] [runtime-status] [85569] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-06-22T17:26:13.015Z] [runtime-status] [85569] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"/Users/yaellotan/Desktop/tulis-event/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-06-22T17:26:13.017Z] [runtime-status] [85569] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.7.0","resolution":"/Users/yaellotan/Desktop/tulis-event/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-06-22T17:26:13.019Z] [runtime-status] [85569] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.7.0","resolution":"/Users/yaellotan/Desktop/tulis-event/functions/node_modules/firebase-functions/lib/index.js"}
+[warn] ⚠  TypeError: Cannot read property 'email' of undefined
+    at Object.<anonymous> (/Users/yaellotan/Desktop/tulis-event/functions/config.js:9:38)
+    at Module._compile (internal/modules/cjs/loader.js:959:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:995:10)
+    at Module.load (internal/modules/cjs/loader.js:815:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:727:14)
+    at Module.require (internal/modules/cjs/loader.js:852:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (/Users/yaellotan/Desktop/tulis-event/functions/index.js:5:21)
+    at Module._compile (internal/modules/cjs/loader.js:959:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:995:10)
+[warn] ⚠  We were unable to load your functions code. (see above)
+[debug] [2020-06-22T17:26:13.566Z] [worker-~diagnostic~-e60efeac-94cf-4be2-8f09-2726d147a8bd]: exited
+[debug] [2020-06-22T17:26:13.566Z] [worker-~diagnostic~-e60efeac-94cf-4be2-8f09-2726d147a8bd]: FINISHED
+[debug] [2020-06-22T17:27:17.718Z] File /Users/yaellotan/Desktop/tulis-event/functions/config.js changed, reloading triggers
+[debug] [2020-06-22T17:27:18.719Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0
+[debug] [2020-06-22T17:27:18.727Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-06-22T17:27:18.727Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-06-22T17:27:18.727Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-06-22T17:27:18.727Z] [worker-~diagnostic~-3b3d23c2-93a3-4d3b-a688-59c5884f6326]: Assigning socketPath: /var/folders/0s/ggy_48wj4ks3n3z2_cmst44m0000gn/T/fire_emu_86242.sock
+[debug] [2020-06-22T17:27:18.727Z] [worker-~diagnostic~-3b3d23c2-93a3-4d3b-a688-59c5884f6326]: BUSY
+[debug] [2020-06-22T17:27:19.593Z] [runtime-status] [86242] Functions runtime initialized. {"cwd":"/Users/yaellotan/Desktop/tulis-event/functions","node_version":"12.13.1"}
+[debug] [2020-06-22T17:27:19.595Z] [runtime-status] [86242] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-06-22T17:27:19.600Z] [runtime-status] [86242] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"/Users/yaellotan/Desktop/tulis-event/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-06-22T17:27:19.604Z] [runtime-status] [86242] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.7.0","resolution":"/Users/yaellotan/Desktop/tulis-event/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-06-22T17:27:19.605Z] [runtime-status] [86242] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.7.0","resolution":"/Users/yaellotan/Desktop/tulis-event/functions/node_modules/firebase-functions/lib/index.js"}
+[info] >  email
+[info] >  undefined
+[warn] ⚠  ReferenceError: transporter is not defined
+    at Object.<anonymous> (/Users/yaellotan/Desktop/tulis-event/functions/config.js:17:18)
+    at Module._compile (internal/modules/cjs/loader.js:959:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:995:10)
+    at Module.load (internal/modules/cjs/loader.js:815:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:727:14)
+    at Module.require (internal/modules/cjs/loader.js:852:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (/Users/yaellotan/Desktop/tulis-event/functions/index.js:5:21)
+    at Module._compile (internal/modules/cjs/loader.js:959:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:995:10)
+[warn] ⚠  We were unable to load your functions code. (see above)
+[debug] [2020-06-22T17:27:20.016Z] [worker-~diagnostic~-3b3d23c2-93a3-4d3b-a688-59c5884f6326]: exited
+[debug] [2020-06-22T17:27:20.016Z] [worker-~diagnostic~-3b3d23c2-93a3-4d3b-a688-59c5884f6326]: FINISHED
+[debug] [2020-06-22T17:27:32.681Z] File /Users/yaellotan/Desktop/tulis-event/functions/config.js changed, reloading triggers
+[debug] [2020-06-22T17:27:33.683Z] [worker-pool] Cleaned up workers for ~diagnostic~: 1 --> 0
+[debug] [2020-06-22T17:27:33.692Z] [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-06-22T17:27:33.692Z] [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-06-22T17:27:33.692Z] [worker-pool] submitWork(triggerId=)
+[debug] [2020-06-22T17:27:33.693Z] [worker-~diagnostic~-dcbdbb86-a080-4cbb-9ea5-f36f66700332]: Assigning socketPath: /var/folders/0s/ggy_48wj4ks3n3z2_cmst44m0000gn/T/fire_emu_86367.sock
+[debug] [2020-06-22T17:27:33.693Z] [worker-~diagnostic~-dcbdbb86-a080-4cbb-9ea5-f36f66700332]: BUSY
+[debug] [2020-06-22T17:27:34.165Z] [runtime-status] [86367] Functions runtime initialized. {"cwd":"/Users/yaellotan/Desktop/tulis-event/functions","node_version":"12.13.1"}
+[debug] [2020-06-22T17:27:34.170Z] [runtime-status] [86367] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-06-22T17:27:34.173Z] [runtime-status] [86367] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"/Users/yaellotan/Desktop/tulis-event/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-06-22T17:27:34.175Z] [runtime-status] [86367] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.7.0","resolution":"/Users/yaellotan/Desktop/tulis-event/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-06-22T17:27:34.176Z] [runtime-status] [86367] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.7.0","resolution":"/Users/yaellotan/Desktop/tulis-event/functions/node_modules/firebase-functions/lib/index.js"}
+[warn] ⚠  TypeError: Cannot read property 'email' of undefined
+    at Object.<anonymous> (/Users/yaellotan/Desktop/tulis-event/functions/config.js:9:38)
+    at Module._compile (internal/modules/cjs/loader.js:959:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:995:10)
+    at Module.load (internal/modules/cjs/loader.js:815:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:727:14)
+    at Module.require (internal/modules/cjs/loader.js:852:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (/Users/yaellotan/Desktop/tulis-event/functions/index.js:5:21)
+    at Module._compile (internal/modules/cjs/loader.js:959:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:995:10)
+[warn] ⚠  We were unable to load your functions code. (see above)
+[debug] [2020-06-22T17:27:34.387Z] [worker-~diagnostic~-dcbdbb86-a080-4cbb-9ea5-f36f66700332]: exited
+[debug] [2020-06-22T17:27:34.387Z] [worker-~diagnostic~-dcbdbb86-a080-4cbb-9ea5-f36f66700332]: FINISHED
+[debug] [2020-06-22T18:01:17.959Z] ----------------------------------------------------------------------
+[debug] [2020-06-22T18:01:17.964Z] Command:       /usr/local/bin/node /usr/local/bin/firebase functions:shell
+[debug] [2020-06-22T18:01:17.964Z] CLI Version:   7.15.1
+[debug] [2020-06-22T18:01:17.964Z] Platform:      darwin
+[debug] [2020-06-22T18:01:17.964Z] Node Version:  v12.13.1
+[debug] [2020-06-22T18:01:17.988Z] Time:          Mon Jun 22 2020 21:01:17 GMT+0300 (Israel Daylight Time)
+[debug] [2020-06-22T18:01:17.988Z] ----------------------------------------------------------------------
+[debug] [2020-06-22T18:01:17.988Z] 
+[debug] [2020-06-22T18:01:18.011Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2020-06-22T18:01:18.011Z] > authorizing via signed-in user
+[debug] [2020-06-22T18:01:18.011Z] [iam] checking project tulis-event for permissions ["firebase.projects.get"]
+[debug] [2020-06-22T18:01:18.013Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2020-06-22T18:01:18.013Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2020-06-22T18:01:18.474Z] <<< HTTP RESPONSE 200
+[debug] [2020-06-22T18:01:18.531Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/tulis-event:testIamPermissions  
+
+[debug] [2020-06-22T18:01:19.495Z] <<< HTTP RESPONSE 200
+[warn] ⚠  Your requested "node" version "8" doesn't match your global version "12"
+[info] ✔  functions: functions emulator started at http://localhost:5000
+[debug] [2020-06-22T18:01:19.555Z] [functions] Watching "/Users/yaellotan/Desktop/tulis-event/functions" for Cloud Functions...
+[debug] [2020-06-22T18:01:19.574Z] DEBUG: [worker-pool] addWorker(~diagnostic~)
+[debug] [2020-06-22T18:01:19.574Z] DEBUG: [worker-pool] Adding worker with key ~diagnostic~, total=1
+[debug] [2020-06-22T18:01:19.574Z] DEBUG: [worker-pool] submitWork(triggerId=)
+[debug] [2020-06-22T18:01:19.575Z] DEBUG: [worker-~diagnostic~-925a55a1-2040-4c46-8c0b-063016c78c82]: Assigning socketPath: /var/folders/0s/ggy_48wj4ks3n3z2_cmst44m0000gn/T/fire_emu_8422.sock
+[debug] [2020-06-22T18:01:19.575Z] DEBUG: [worker-~diagnostic~-925a55a1-2040-4c46-8c0b-063016c78c82]: BUSY
+[debug] [2020-06-22T18:01:19.926Z] DEBUG: [runtime-status] [8422] Functions runtime initialized. {"cwd":"/Users/yaellotan/Desktop/tulis-event/functions","node_version":"12.13.1"}
+[debug] [2020-06-22T18:01:19.926Z] DEBUG: [runtime-status] [8422] Disabled runtime features: {"functions_config_helper":true,"network_filtering":true,"timeout":true,"memory_limiting":true,"admin_stubs":true,"pubsub_emulator":true}
+[debug] [2020-06-22T18:01:19.931Z] DEBUG: [runtime-status] [8422] Resolved module firebase-admin {"declared":true,"installed":true,"version":"8.12.1","resolution":"/Users/yaellotan/Desktop/tulis-event/functions/node_modules/firebase-admin/lib/index.js"}
+[debug] [2020-06-22T18:01:19.934Z] DEBUG: [runtime-status] [8422] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.7.0","resolution":"/Users/yaellotan/Desktop/tulis-event/functions/node_modules/firebase-functions/lib/index.js"}
+[debug] [2020-06-22T18:01:19.935Z] DEBUG: [runtime-status] [8422] Resolved module firebase-functions {"declared":true,"installed":true,"version":"3.7.0","resolution":"/Users/yaellotan/Desktop/tulis-event/functions/node_modules/firebase-functions/lib/index.js"}
+[warn] ⚠  TypeError: Cannot read property 'email' of undefined
+    at Object.<anonymous> (/Users/yaellotan/Desktop/tulis-event/functions/config.js:9:38)
+    at Module._compile (internal/modules/cjs/loader.js:959:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:995:10)
+    at Module.load (internal/modules/cjs/loader.js:815:32)
+    at Function.Module._load (internal/modules/cjs/loader.js:727:14)
+    at Module.require (internal/modules/cjs/loader.js:852:19)
+    at require (internal/modules/cjs/helpers.js:74:18)
+    at Object.<anonymous> (/Users/yaellotan/Desktop/tulis-event/functions/index.js:5:21)
+    at Module._compile (internal/modules/cjs/loader.js:959:30)
+    at Object.Module._extensions..js (internal/modules/cjs/loader.js:995:10)
+[warn] ⚠  We were unable to load your functions code. (see above)
+[debug] [2020-06-22T18:01:20.704Z] DEBUG: [worker-~diagnostic~-925a55a1-2040-4c46-8c0b-063016c78c82]: exited
+[debug] [2020-06-22T18:01:20.704Z] DEBUG: [worker-~diagnostic~-925a55a1-2040-4c46-8c0b-063016c78c82]: FINISHED

@@ -215,7 +215,7 @@ const Contact = (props) => {
         } else {
             setSending(true);
             try {
-                const response = await axios.post('/send', { 
+                const response = await axios.post('https://glacial-plains-11245.herokuapp.com/send', { 
                     email: inputs.email.value,
                     content: inputs.content.value,
                     tel: inputs.phoneNumber.value, 
