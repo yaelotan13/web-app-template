@@ -60,13 +60,27 @@ const Gallery = (props) => {
     const classes = useStyle();
     const images = getGalleryImages();
     const [open, setOpen] = useState(false);
-    const [curImage, setCurImage] = useState(null);
+    const [curImageIndex, setCurImageIndex] = useState(0);
     const [t, i18n] = useTranslation();
 
     const rightToLeft = () => i18n.language === "Hebrew";
 
-    const handleImageClicked = (image) => {
-        setCurImage(image);
+    const getImage = index => images[index].img;
+
+    const getNextImage = () => {
+        const newCurrentIndex = curImageIndex + 1 >= images.length ? 0 : curImageIndex + 1;
+        setCurImageIndex(newCurrentIndex);
+        return getImage(newCurrentIndex);
+    };
+    
+    const getPrevImage = () => {
+        const newCurrentIndex = curImageIndex - 1 < 0 ? images.length - 1 : curImageIndex - 1;
+        setCurImageIndex(newCurrentIndex);
+        return getImage(newCurrentIndex);
+    };
+
+    const handleImageClicked = (index) => {
+        setCurImageIndex(index);
         setOpen(true);
     };
 
@@ -76,16 +90,16 @@ const Gallery = (props) => {
 
     return (
         <Box className={classes.container}>
-            <LargeImage open={open} handleClose={handleClose} img={curImage} />
+            <LargeImage open={open} handleClose={handleClose} img={getImage(curImageIndex)} getNextImage={getNextImage} getPrevImage={getPrevImage} />
             <Box className={classes.content}>
                 <Typography variant="h1" className={rightToLeft ? [classes.header, classes.rightToLeftHeader].join(' ') : classes.header}>{t("gallery")}</Typography>
                 <Typography variant="h6" className={rightToLeft ? [classes.subHeader, classes.subHeaderRightToLeft].join(' ') : classes.subHeader}>{t("gallery-description")}</Typography>
             </Box>
             <Box className={classes.galleryContainer}>
                 <GridList cellHeight={160} className={classes.gridList} cols={3}>
-                    {images.map((tile) => (
+                    {images.map((tile, index) => (
                         <GridListTile key={tile.img} cols={tile.cols || 1}>
-                            <img className={classes.img} src={tile.img} alt={tile.title} onClick={() => handleImageClicked(tile.img)} />
+                            <img className={classes.img} src={tile.img} alt={tile.title} onClick={() => handleImageClicked(index)} />
                         </GridListTile>
                     ))}
                 </GridList>
