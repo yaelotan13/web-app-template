@@ -40,7 +40,7 @@ const Event = (props) => {
     return (
         <ScrollAnimation 
             animateIn='fadeInUp'
-            delay={600}
+            delay={400}
             initiallyVisible={false}
             animateOnce={true}
         >

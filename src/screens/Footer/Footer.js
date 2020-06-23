@@ -1,8 +1,8 @@
 import React from 'react';
-import { Box, Typography } from '@material-ui/core';
+import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
-import { useTranslation } from 'react-i18next';
-import flower from '../../assets/icons/flower.png';
+
+import yaelLogo from '../../assets/icons/yael-logo.jpg';
 
 const useStyle = makeStyles(theme => ({
     footer: {
@@ -11,9 +11,8 @@ const useStyle = makeStyles(theme => ({
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
-        paddingTop: '10vh',
-        paddingBottom: '2vh',
-        backgroundColor: '#F6F6F6',
+        paddingTop: '2vh',
+        backgroundColor: 'white',
     },
     rightToLeft: {
         flexDirection: 'row-reverse'
@@ -26,28 +25,23 @@ const useStyle = makeStyles(theme => ({
         fontSize: 18,
         fontWeight: 700
     },
-    flower: {
-        backgroundImage: `url(${flower})`,
+    icon: {
+        backgroundImage: `url(${yaelLogo})`,
         backgroundSize: 'contain',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-        width: 28,
-        height: 28,
-        marginLeft: 8,
-        marginRight: 8
+        width: 400,
+        height: 70,
+        marginBottom: '2vh'
     },
 }));
 
 const Footer = (props) => {
     const classes = useStyle();
-    const [t, i18n] = useTranslation();
-    
-    const rightToLeft = () => i18n.language === "Hebrew";
     
     return (
-        <Box className={rightToLeft ? [classes.footer, classes.rightToLeft].join(' ') : classes.footer}>
-            <Typography variant="h6" className={rightToLeft ? [classes.content, classes.rightToLeftContent].join(' ') : classes.content}>{t("built-by-yael")}</Typography>
-            <Box className={classes.flower} />
+        <Box className={classes.footer}>
+            <Box className={classes.icon} />
         </Box>
     )
 };

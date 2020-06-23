@@ -59,6 +59,7 @@ const useStyle = makeStyles(theme => ({
 const Gallery = (props) => {
     const classes = useStyle();
     const images = getGalleryImages();
+    const largeImages = images.reduce((acc, item) => [...acc, { original: item.img }], []);
     const [open, setOpen] = useState(false);
     const [curImageIndex, setCurImageIndex] = useState(0);
     const [t, i18n] = useTranslation();
@@ -90,7 +91,7 @@ const Gallery = (props) => {
 
     return (
         <Box className={classes.container}>
-            <LargeImage open={open} handleClose={handleClose} img={getImage(curImageIndex)} getNextImage={getNextImage} getPrevImage={getPrevImage} />
+            <LargeImage open={open} images={largeImages} index={curImageIndex} handleClose={handleClose} img={getImage(curImageIndex)} getNextImage={getNextImage} getPrevImage={getPrevImage} />
             <Box className={classes.content}>
                 <Typography variant="h1" className={rightToLeft ? [classes.header, classes.rightToLeftHeader].join(' ') : classes.header}>{t("gallery")}</Typography>
                 <Typography variant="h6" className={rightToLeft ? [classes.subHeader, classes.subHeaderRightToLeft].join(' ') : classes.subHeader}>{t("gallery-description")}</Typography>

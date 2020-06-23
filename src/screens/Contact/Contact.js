@@ -14,6 +14,7 @@ const useStyle = makeStyles(theme => ({
         marginTop: '15vh',
         backgroundColor: '#F6F6F6',
         paddingTop: '5vh',
+        paddingBottom: '12vh'
     },
     contentContainer: {
         display: 'flex',

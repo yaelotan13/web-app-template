@@ -4,6 +4,7 @@ import theme from './theme/index';
 import { createBrowserHistory } from 'history';
 import { Router, BrowserRouter } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import "react-image-gallery/styles/css/image-gallery.css";
 
 import Routes from './Routes';
 
