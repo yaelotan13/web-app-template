@@ -1,9 +1,10 @@
 import React from 'react';
-import { Box, Modal, Backdrop, Fade } from '@material-ui/core';
+import { Box, Modal, Backdrop, Fade, IconButton } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import CloseIcon from '@material-ui/icons/Close';
 import ArrowForwardIosIcon from '@material-ui/icons/ArrowForwardIos';
 import ArrowBackIosIcon from '@material-ui/icons/ArrowBackIos';
+import ImageGallery from 'react-image-gallery';
 
 const useStyle = makeStyles(theme => ({
     container: {
@@ -12,8 +13,9 @@ const useStyle = makeStyles(theme => ({
         alignItems: 'center'
     },
     paper: {
-        backgroundColor: theme.palette.background.paper,
+        // backgroundColor: theme.palette.background.paper,
         boxShadow: theme.shadows[5],
+        outline: 'none',
         position: 'relative',
         display: 'flex',
         justifyContent: 'center',
@@ -43,31 +45,44 @@ const useStyle = makeStyles(theme => ({
         backgroundRepeat: 'no-repeat',
         outline: 'none',
         [theme.breakpoints.down('sm')]: {
-            width: '90vw',
+            width: '85vw',
             height: '60vh'
         }
     },
     arrowsContainer: {
-        width: '100%',
+        width: '74vw',
         height: '60vh',
         display: 'flex',
         justifyContent: 'space-between',
         alignItems: 'center',
         position: 'absolute',
         zIndex: 6,
-        left: 0
+        left: '-7vw',
+        [theme.breakpoints.down('sm')]: {
+            width: '96vw',
+        }
+    },
+    iconButton: {
+        padding: 8,
+        '&:hover': {
+            backgroundColor: 'rgba(0, 0, 0, 0.44)'
+        },
     },
     arrowIcon: {
-        width: 40,
-        height: 40,
+        width: 45,
+        height: 45,
         cursor: 'pointer',
-        color: 'white'
+        color: 'white',
+        padding: 9
+    },
+    gallery: {
+        outline: 'none'
     }
 }));
 
 const LargeImage = (props) => {
     const classes = useStyle();
-    const { img, open, handleClose, getNextImage, getPrevImage } = props;
+    const { img, open, handleClose, getNextImage, getPrevImage, images, index } = props;
 
     return (
         <Modal
@@ -81,14 +96,19 @@ const LargeImage = (props) => {
             }}
         >
             <Fade in={open}>
-                <div className={classes.paper}>
+                {/* <div className={classes.paper}>
                     <CloseIcon className={classes.closeIcon} onClick={handleClose} />
                     <Box className={classes.img} style={{ backgroundImage: `url(${img})`}} />
                     <Box className={classes.arrowsContainer}>
-                        <ArrowBackIosIcon className={classes.arrowIcon} onClick={getPrevImage} />
-                        <ArrowForwardIosIcon className={classes.arrowIcon} onClick={getNextImage} />
+                        <IconButton onClick={getPrevImage} className={classes.iconButton}>
+                            <ArrowBackIosIcon className={classes.arrowIcon} />
+                        </IconButton>
+                        <IconButton onClick={getNextImage} className={classes.iconButton}>
+                            <ArrowForwardIosIcon className={classes.arrowIcon} />
+                        </IconButton>
                     </Box>
-                </div>
+                </div> */}
+                <ImageGallery originalClass={classes.gallery} items={images} startIndex={index} showThumbnails={false} />
             </Fade>
         </Modal>
     )
