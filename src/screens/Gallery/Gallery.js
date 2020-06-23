@@ -66,20 +66,6 @@ const Gallery = (props) => {
 
     const rightToLeft = () => i18n.language === "Hebrew";
 
-    const getImage = index => images[index].img;
-
-    const getNextImage = () => {
-        const newCurrentIndex = curImageIndex + 1 >= images.length ? 0 : curImageIndex + 1;
-        setCurImageIndex(newCurrentIndex);
-        return getImage(newCurrentIndex);
-    };
-    
-    const getPrevImage = () => {
-        const newCurrentIndex = curImageIndex - 1 < 0 ? images.length - 1 : curImageIndex - 1;
-        setCurImageIndex(newCurrentIndex);
-        return getImage(newCurrentIndex);
-    };
-
     const handleImageClicked = (index) => {
         setCurImageIndex(index);
         setOpen(true);
@@ -91,7 +77,7 @@ const Gallery = (props) => {
 
     return (
         <Box className={classes.container}>
-            <LargeImage open={open} images={largeImages} index={curImageIndex} handleClose={handleClose} img={getImage(curImageIndex)} getNextImage={getNextImage} getPrevImage={getPrevImage} />
+            <LargeImage open={open} images={largeImages} index={curImageIndex} handleClose={handleClose} />
             <Box className={classes.content}>
                 <Typography variant="h1" className={rightToLeft ? [classes.header, classes.rightToLeftHeader].join(' ') : classes.header}>{t("gallery")}</Typography>
                 <Typography variant="h6" className={rightToLeft ? [classes.subHeader, classes.subHeaderRightToLeft].join(' ') : classes.subHeader}>{t("gallery-description")}</Typography>
