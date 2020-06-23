@@ -14,22 +14,31 @@ const useStyle = makeStyles(theme => ({
         position: 'absolute',
         top: '45vh',
         color: 'black',
-        left: '10vw',
-        width: '30vw'
+        // width: '35vw',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        [theme.breakpoints.down('xs')]: {
+            top: '28vh',
+        }
     },
     header: {
-        fontSize: 60,
+        fontSize: 100,
+        color: 'white',
+        fontFamily: "'Amatic SC', cursive",
         [theme.breakpoints.down('xs')]: {
-            fontSize: 26,
-            textAlign: 'center'
+            fontSize: 56,
+            textAlign: 'center',
+            padding: '0 2vw'
         }
     },
     subHeader: {
-        marginTop: '3vh',
+        marginTop: '4vh',
+        fontSize: 30,
+        color: 'white',
         [theme.breakpoints.down('xs')]: {
-            fontSize: 16,
-            textAlign: 'center',
-            marginTop: 0,
+            fontSize: 22,
+            marginTop: '1vh',
         }
     },
 }));
@@ -40,18 +49,18 @@ const Content = (props) => {
 
     return (
         <>
-            <Hidden smUp>
-                <Box className={classes.mobileContent}>
-                    <Typography variant="h1" className={classes.header}>{header}</Typography>
-                    <Typography variant="h5" className={classes.subHeader}>{subHeader}</Typography>
-                </Box>
-            </Hidden>
-            <Hidden xsDown>
+            {/* <Hidden smUp> */}
                 <Box className={classes.content}>
                     <Typography variant="h1" className={classes.header}>{header}</Typography>
                     <Typography variant="h5" className={classes.subHeader}>{subHeader}</Typography>
                 </Box>
-            </Hidden>
+            {/* </Hidden> */}
+            {/* <Hidden xsDown>
+                <Box className={classes.content}>
+                    <Typography variant="h1" className={classes.header}>{header}</Typography>
+                    <Typography variant="h5" className={classes.subHeader}>{subHeader}</Typography>
+                </Box>
+            </Hidden> */}
         </>
     )
 };

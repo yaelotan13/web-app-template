@@ -3,34 +3,13 @@ import { Box, GridList, GridListTile, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 import { useTranslation } from 'react-i18next';
 
+import Header from '../../components/Header';
 import { getGalleryImages } from '../../data/images';
 import { LargeImage } from './components';
 
 const useStyle = makeStyles(theme => ({
     content: {
-        margin: '4vh 0',
         padding: '0 4vw'
-    },
-    header: {
-        textAlign: 'center',
-        [theme.breakpoints.down('sm')]: {
-            fontSize: 40,
-        }
-    },
-    rightToLeftHeader: {
-        fontFamily: "'Amatic SC', cursive"
-    },
-    subHeader: {
-        marginTop: '6vh',
-        textAlign: 'center',
-        color: '#546e7a',
-        [theme.breakpoints.down('sm')]: {
-            fontSize: 16,
-        }
-    },
-    subHeaderRightToLeft: {
-        fontFamily: "'Alef', sans-serif",
-        marginTop: 2
     },
     galleryContainer: {
         display: 'flex',
@@ -78,10 +57,9 @@ const Gallery = (props) => {
     return (
         <Box className={classes.container}>
             <LargeImage open={open} images={largeImages} index={curImageIndex} handleClose={handleClose} />
-            <Box className={classes.content}>
-                <Typography variant="h1" className={rightToLeft ? [classes.header, classes.rightToLeftHeader].join(' ') : classes.header}>{t("gallery")}</Typography>
-                <Typography variant="h6" className={rightToLeft ? [classes.subHeader, classes.subHeaderRightToLeft].join(' ') : classes.subHeader}>{t("gallery-description")}</Typography>
-            </Box>
+            <Header title={t("gallery")} subTitle={t("gallery-description")} />
+                {/* <Typography variant="h1" className={rightToLeft ? [classes.header, classes.rightToLeftHeader].join(' ') : classes.header}>{t("gallery")}</Typography>
+                <Typography variant="h6" className={rightToLeft ? [classes.subHeader, classes.subHeaderRightToLeft].join(' ') : classes.subHeader}>{t("gallery-description")}</Typography> */}
             <Box className={classes.galleryContainer}>
                 <GridList cellHeight={160} className={classes.gridList} cols={3}>
                     {images.map((tile, index) => (
