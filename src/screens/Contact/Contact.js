@@ -143,6 +143,7 @@ const Contact = (props) => {
     const [messageSentSuccessfully, setMessageSentSuccessfully] = useState(null);
     const [serverError, setServerError] = useState(null);
     const [hasInputsError, setHasInputsError] = useState(false);
+    const url = process.env.NODE_ENV === 'development' ? 'http://localhost:3333/send' : 'https://glacial-plains-11245.herokuapp.com/send';
     const [inputs, setInputs] = useState({
         fullName: {
             value: '',
@@ -164,7 +165,9 @@ const Contact = (props) => {
     const handleChange = (event) => {
         const name = event.target.name;
         const value = event.target.value;
-
+        
+        setMessageSentSuccessfully(false);
+        setServerError(false);
         setHasInputsError(false);
         setInputs(prevState => {
             const updatedState = {
@@ -213,9 +216,11 @@ const Contact = (props) => {
         if (hasError) {
             setHasInputsError(hasError);
         } else {
+            setMessageSentSuccessfully(false);
+            setServerError(false);
             setSending(true);
             try {
-                const response = await axios.post('https://glacial-plains-11245.herokuapp.com/send', { 
+                const response = await axios.post(url, { 
                     content: inputs.content.value,
                     tel: inputs.phoneNumber.value, 
                     name: inputs.fullName.value

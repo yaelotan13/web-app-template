@@ -11,6 +11,10 @@ const useStyle = makeStyles(theme => ({
         backgroundSize: 'contain',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
+        transition: 'height 0.4s',
+        '&:hover': {
+            height: 80,
+        },
         [theme.breakpoints.down('sm')]: {
             width: 100,
             height: 40,
@@ -22,7 +26,7 @@ const useStyle = makeStyles(theme => ({
             height: 40,
             marginTop: '2vh',
             marginRight: 8,
-        }
+        },
     }
 }));
 
