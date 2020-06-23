@@ -40,8 +40,7 @@ const useStyle = makeStyles(theme => ({
         height: '100%',
         backgroundPosition: 'center',
         backgroundSize: 'cover',
-        opacity: 0.6,
-        filter: 'brightness(50%)',
+        opacity: 0.8,
         [theme.breakpoints.down('xs')]: {
             backgroundSize: 'cover',
             backgroundRepeat: 'no-repeat',
@@ -56,7 +55,7 @@ const Images = (props) => {
 
     return (
         <Box className={classes.container}>
-            <Content header={t("about-me-title")} subHeader={t("sub-title")} />
+            {/* <Content header={t("about-me-title")} subHeader={t("sub-title")} /> */}
             <Carousel interval="4000" pause="false" className={classes.carousel}>
                 {getHomeCarouselImages().map(image => 
                     <Carousel.Item className={classes.imageContainer} key={image.id}>
