@@ -30,7 +30,7 @@ const Flags = (props) => {
 
     const handleFlagClicked = (lan) => {
         i18next.changeLanguage(lan);
-        handleClose();
+        handleClose && handleClose();
     };
 
     return (

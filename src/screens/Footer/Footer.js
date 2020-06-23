@@ -2,12 +2,12 @@ import React from 'react';
 import { Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/styles';
 
-import yaelLogo from '../../assets/icons/yael-logo.jpg';
+import yaelLogo from '../../assets/icons/yael-logo.png';
 
 const useStyle = makeStyles(theme => ({
     footer: {
         width: '100vw',
-        height: '15vh',
+        height: '8vh',
         display: 'flex',
         justifyContent: 'center',
         alignItems: 'center',
@@ -31,8 +31,8 @@ const useStyle = makeStyles(theme => ({
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         width: 400,
-        height: 70,
-        marginBottom: '2vh'
+        height: 50,
+        marginBottom: '1vh'
     },
 }));
 

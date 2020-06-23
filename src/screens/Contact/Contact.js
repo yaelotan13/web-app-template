@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useTranslation } from 'react-i18next';
 import { Checkmark } from 'react-checkmark'
 
+import Header from '../../components/Header';
 import phone from '../../assets/icons/phone.png';
 import email from '../../assets/icons/email.png';
 import Input from '../../components/Input';
@@ -242,7 +243,7 @@ const Contact = (props) => {
 
     return (
         <Box className={classes.container}>
-            <Typography variant="h1" className={rightToLeft ? [classes.head, classes.rightToLeftMainHeader].join(' ') : classes.head}>{t("contact-me")}</Typography>
+            <Header title={t("contact-me")} />
             <Box className={classes.contentContainer}>
                 <Box className={classes.content}>
                     <Box className={classes.contactContainer}>
