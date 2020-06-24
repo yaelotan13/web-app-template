@@ -11,69 +11,80 @@ import client10 from '../assets/images/clients/liveperson.jpg';
 import client11 from '../assets/images/clients/mexico-embassy.jpeg';
 import client12 from '../assets/images/clients/tlv.jpg';
 
-
 const clients = [client1, client2, client3, client4, client5, client6, client7, client8, client9, client10, client11, client12];
 
 const clientsData = [
     { 
-        id: 0,
-        img: clients[0],
-        alt: ""
+        id: 12,
+        img: clients[11],
+        alt: "",
+        important: true
     },
     { 
-        id: 1,
-        img: clients[1],
-        alt: ""
+        id: 8,
+        img: clients[7],
+        alt: "",
+        important: true
     },
     { 
         id: 2,
         img: clients[2],
-        alt: ""
+        alt: "",
+        important: true
     },
     { 
         id: 3,
         img: clients[3],
-        alt: ""
+        alt: "",
+        important: false
     },
     { 
         id: 4,
         img: clients[4],
-        alt: ""
+        alt: "",
+        important: false
     },
     { 
         id: 5,
         img: clients[5],
-        alt: ""
+        alt: "",
+        important: false
     },
     { 
         id: 6,
         img: clients[6],
-        alt: ""
+        alt: "",
+        important: false
     },
     { 
         id: 7,
-        img: clients[7],
-        alt: ""
+        img: clients[8],
+        alt: "",
+        important: false
     },
     { 
-        id: 8,
-        img: clients[8],
-        alt: ""
+        id: 1,
+        img: clients[1],
+        alt: "",
+        important: false
     },
     { 
         id: 9,
         img: clients[9],
-        alt: ""
+        alt: "",
+        important: false
     },
     { 
         id: 10,
         img: clients[10],
-        alt: ""
+        alt: "",
+        important: false
     },
     { 
-        id: 11,
-        img: clients[11],
-        alt: ""
+        id: 0,
+        img: clients[0],
+        alt: "",
+        important: false
     },
 ];
 

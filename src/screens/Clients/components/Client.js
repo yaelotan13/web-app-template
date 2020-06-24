@@ -27,15 +27,34 @@ const useStyle = makeStyles(theme => ({
             marginTop: '2vh',
             marginRight: 8,
         },
+    },
+    importantClient: {
+        width: 170,
+        height: 90,
+        '&:hover': {
+            height: 100,
+        },
+        [theme.breakpoints.down('sm')]: {
+            width: 120,
+            height: 60,
+        },
+        [theme.breakpoints.down('xs')]: {
+            width: 100,
+            height: 60,
+        },
     }
 }));
 
 const Client = (props) => {
     const classes = useStyle();
-    const { img, alt } = props;
+    const { img, alt, important } = props;
 
     return (
-        <Box className={classes.client} alt={alt} style={{ backgroundImage: `url(${img})`}}/>
+        <Box 
+            className={important ? [classes.client, classes.importantClient].join(' ') : classes.client} 
+            alt={alt} 
+            style={{ backgroundImage: `url(${img})`}}
+        />
     )
 };
 
