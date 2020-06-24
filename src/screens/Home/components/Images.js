@@ -55,7 +55,6 @@ const Images = (props) => {
 
     return (
         <Box className={classes.container}>
-            {/* <Content header={t("about-me-title")} subHeader={t("sub-title")} /> */}
             <Carousel interval="4000" pause="false" className={classes.carousel}>
                 {getHomeCarouselImages().map(image => 
                     <Carousel.Item className={classes.imageContainer} key={image.id}>
