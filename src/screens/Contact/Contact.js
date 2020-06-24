@@ -254,7 +254,7 @@ const Contact = (props) => {
                         <Typography className={classes.separator}>|</Typography>
                         <Box className={classes.contactContainer}>
                             <Box className={[classes.icon, classes.email].join(' ')} />
-                            <Typography>tuli@gmail.com</Typography>
+                            <Typography>tulis.events@gmail.com</Typography>
                         </Box>
                     </Box>
                 </Box>

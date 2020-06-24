@@ -18,6 +18,7 @@ const useStyle = makeStyles(theme => ({
         marginLeft: '10vw',
         padding: '5vw',
         marginTop: '2vh',
+        whiteSpace: 'pre-wrap',
         [theme.breakpoints.down('sm')]: {
             width: '90vw',
             marginLeft: '5vw'
